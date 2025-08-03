@@ -63,12 +63,45 @@
                         </TabControl>
                     </TabItem>
                     <TabItem Header="show dub.json">
-
+                        <StackPanel Background="Black">
+                            <Label Background="Black" Foreground="White" Content="Open dub.json in Visual Studio : " ></Label>
+                            <Button Content="Open file" Width="100" Height="30" Background="Black" Foreground="White"
+                                    BorderBrush="White" BorderThickness="3" Margin="5"
+                                    ></Button>
+                            <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap" Text="If you don't have a dub.json file, you can create a new one using the button above." />
+                        </StackPanel>
                     </TabItem>
                     <TabItem Header="Build with Dub">
+                        <StackPanel Background="Black">
+                            <Label Background="Black" Foreground="White" Content="Build with Debug : " ></Label>
+                            <Button Content="Build Debug" Width="100" Height="30" Background="Black" Foreground="White"
+                                        BorderBrush="White" BorderThickness="3" Margin="5"
+                                ></Button>
+                            <Label Background="Black" Foreground="White" Content="Build with Release : " ></Label>
+                            <Button Content="Build Release" Width="100" Height="30" Background="Black" Foreground="White"
+                                        BorderBrush="White" BorderThickness="3" Margin="5"
+                                ></Button>
 
+                            <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap" Text="If you don't have a dub.json file, you can create a new one using the button above." />
+                        </StackPanel>
                     </TabItem>
                     <TabItem Header="about me">
+                        <StackPanel Background="Black" Margin="10">
+                            <TextBlock Text="Hello, I am Khashayar Mobasheri (Abolfazl), founder of Aripa Pars Studio." 
+                                       FontSize="14" FontWeight="Bold" Margin="0,0,0,10"
+                                       TextWrapping="Wrap"
+                                       Foreground="White" HorizontalAlignment="Center"/>
+                            <TextBlock Text="This extension is designed to improve the workflow for Dub and D language developers. It's a simple, yet powerful and useful extension. If you like it, I'd appreciate a star! ❤" 
+                                       TextWrapping="Wrap" Margin="0,0,0,20"
+                                       Foreground="White" HorizontalAlignment="Center"/>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Content="Telegram" Margin="5"/>
+                                <Button Content="Website" Margin="5"/>
+                                <Button Content="GitHub" Margin="5"/>
+                                <Button Content="Extension Repository" Margin="5"/>
+                            </StackPanel>
+                        </StackPanel>
 
                     </TabItem>
                 </TabControl>
