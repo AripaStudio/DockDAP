@@ -43,5 +43,14 @@ namespace DockDAP
         {
             BtnManagerAP.OpenLinkAP("https://github.com/AripaStudio/DockDAP");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DubConfigAP dubConfigAp = APIdockAP.CreateOrLoadDubFileAP();
+            if (dubConfigAp == null)
+            {
+                MessageBox.Show("Error in Create or Load Dub File");
+            }
+        }
     }
 }

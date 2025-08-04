@@ -15,7 +15,7 @@
             <StackPanel>
                 <DockPanel>
                     <Label  BorderBrush="White" BorderThickness="1" Content="Create dub.json File : " Foreground="White"></Label>
-                    <Button BorderBrush="White" Background="Black" Content="Create" Foreground="White "></Button>
+                    <Button BorderBrush="White" Background="Black" Content="Create" Foreground="White " Click="Button_Click"></Button>
                 </DockPanel>
                 <TabControl>
                     <TabItem FontSize="10" Header="dub Manager">
