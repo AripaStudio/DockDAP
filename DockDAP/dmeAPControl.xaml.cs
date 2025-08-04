@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Controls;
+using DockDAP.Ruls;
 
 namespace DockDAP
 {
@@ -21,6 +22,26 @@ namespace DockDAP
             MessageBox.Show(
                 string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
                 "dmeAP");
+        }
+
+        private void Btn_Telegram_Click(object sender, RoutedEventArgs e)
+        {
+            BtnManagerAP.OpenLinkAP("https://t.me/AripaStudio");
+        }
+
+        private void Btn_Website_Click(object sender, RoutedEventArgs e)
+        {
+            BtnManagerAP.OpenLinkAP("https://aripastudio.github.io/AripaStudio/");
+        }
+
+        private void Btn_Github_Click(object sender, RoutedEventArgs e)
+        {
+            BtnManagerAP.OpenLinkAP("https://github.com/AripaStudio");
+        }
+
+        private void Btn_DockDAPrepository_Click(object sender, RoutedEventArgs e)
+        {
+            BtnManagerAP.OpenLinkAP("https://github.com/AripaStudio/DockDAP");
         }
     }
 }

@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
-             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
-             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             Background="Black"
+             Foreground="White"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="400"
              Name="MyToolWindow">
@@ -96,10 +96,10 @@
                                        Foreground="White" HorizontalAlignment="Center"/>
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Content="Telegram" Margin="5"/>
-                                <Button Content="Website" Margin="5"/>
-                                <Button Content="GitHub" Margin="5"/>
-                                <Button Content="Extension Repository" Margin="5"/>
+                                <Button Name="Btn_Telegram" Content="Telegram" Margin="5" Click="Btn_Telegram_Click"/>
+                                <Button Name="Btn_Website" Content="Website" Margin="5" Click="Btn_Website_Click"/>
+                                <Button Name="Btn_Github" Content="GitHub" Margin="5" Click="Btn_Github_Click"/>
+                                <Button Name="Btn_DockDAPrepository" Content="Extension Repository" Margin="5" Click="Btn_DockDAPrepository_Click"/>
                             </StackPanel>
                         </StackPanel>
 
