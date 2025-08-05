@@ -60,7 +60,13 @@ namespace DockDAP.Ruls
             if (string.IsNullOrEmpty(path) || !File.Exists(path)) { return null; }
 
             string jsonString = File.ReadAllText(path);
-            return JsonConvert.DeserializeObject<DubConfigAP>(jsonString);
+
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                MissingMemberHandling = MissingMemberHandling.Ignore
+            };
+
+            return JsonConvert.DeserializeObject<DubConfigAP>(jsonString , settings);
 
         }
 
