@@ -6,8 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using System.Windows.Shapes;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft.VisualStudio.PlatformUI;
 using Microsoft.VisualStudio.Settings.Internal;
 using Microsoft.VisualStudio.Shell;
 using Newtonsoft.Json;
@@ -110,9 +112,9 @@ namespace DockDAP.Ruls
 
             DubConfigAP config = new DubConfigAP
             {
-                Name = "WelcomeToDockDAP",
+                Name = "initial-DubFile-DockAP",
                 Description = "A new Dub.json file by DockDAP , AripaParsStudio",
-                Dependencies = new Dictionary<string, string>()
+                Authors = new List<string>(){ "DockAPUser" },
             };
             string jsonString = JsonConvert.SerializeObject(config, Formatting.Indented);
             File.WriteAllText(path, jsonString);
@@ -123,6 +125,29 @@ namespace DockDAP.Ruls
 
     }
 
+    public static class DubCommandAP
+    {
+        public static bool BuildDebugDubAP()
+        {
+            return true;
+        }
+
+        public static bool BuildReleaseDubAP() 
+        {
+            return true;
+        }
+
+        public static void OpenDubFileinVisualStudioAP(string path)
+        {
+            DTE2 dte = DubManagerAP.FindMainPathDte2AP();
+            if (dte == null || string.IsNullOrEmpty(path) || !File.Exists(path))
+            {
+                return;
+            }
+
+            dte.ItemOperations.OpenFile(path);
+        }
+    }
     public static class APIdockAP
     {
         public static DubConfigAP CreateOrLoadDubFileAP()
