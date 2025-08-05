@@ -24,40 +24,6 @@ namespace DockDAP.Ruls
 
     public static class DubManagerAP
     {
-        public static bool CreateDubFileAP(DTE2 dte2)
-        {
-            if (dte2 == null || dte2.Solution == null || dte2.Solution.Projects == null)
-            {
-                return false;
-            }
-
-            Project firstProject = dte2.Solution.Projects.Item(1);
-            if (firstProject == null || string.IsNullOrEmpty(firstProject.FullName))
-            {
-                return false;
-            }
-
-            string projectDirectory = System.IO.Path.GetDirectoryName(firstProject.FullName);
-            if (projectDirectory == null)
-            {
-                return false;
-            }
-
-            string fullPath = Path.Combine(projectDirectory, "dub.json");
-            if (File.Exists(fullPath))
-            {
-                return false;
-            }
-
-            using (FileStream fileStream = File.Create(fullPath))
-            {
-                string content = "{}";
-                byte[] contentBytes = Encoding.UTF8.GetBytes(content);
-
-                fileStream.Write(contentBytes, 0, contentBytes.Length);
-            }
-            return true;
-        }
 
         public static DTE2 FindMainPathDte2AP()
         {
