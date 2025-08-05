@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ using Microsoft.VisualStudio.PlatformUI;
 using Microsoft.VisualStudio.Settings.Internal;
 using Microsoft.VisualStudio.Shell;
 using Newtonsoft.Json;
+using Process = EnvDTE.Process;
 
 namespace DockDAP.Ruls
 {
@@ -77,10 +79,10 @@ namespace DockDAP.Ruls
 
             foreach (EnvDTE.Project project in dte2.Solution.Projects)
             {
-                string projectDirectory = Path.GetDirectoryName(project.FullName);
+                string projectDirectory = System.IO.Path.GetDirectoryName(project.FullName);
                 if (projectDirectory != null)
                 {
-                    string dubJsonPath = Path.Combine(projectDirectory, "dub.json");
+                    string dubJsonPath = System.IO.Path.Combine(projectDirectory, "dub.json");
 
                     if (File.Exists(dubJsonPath))
                     {
@@ -127,14 +129,63 @@ namespace DockDAP.Ruls
 
     public static class DubCommandAP
     {
-        public static bool BuildDebugDubAP()
+        public static void BuildDubCommandAP(string projectPath, string arguments)
         {
-            return true;
-        }
+            DTE2 dte = DubManagerAP.FindMainPathDte2AP();
+            if (dte == null)
+            {
+                return;
+            }
 
-        public static bool BuildReleaseDubAP() 
-        {
-            return true;
+            Window outputWindow = dte.Windows.Item(Constants.vsWindowKindOutput);
+            outputWindow.Visible = true;
+            OutputWindowPane outputPane = dte.ToolWindows.OutputWindow.OutputWindowPanes.Add("Dub Manager");
+            outputPane.Activate();
+
+
+            ProcessStartInfo processStartInfo = new ProcessStartInfo
+            {
+                FileName = "dub.exe",
+                Arguments = arguments,
+                WorkingDirectory = projectPath,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            try
+            {
+                using (System.Diagnostics.Process process =  System.Diagnostics.Process.Start(processStartInfo))
+                {
+                    process.OutputDataReceived += ProcessOnOutputDataReceived;
+                    process.ErrorDataReceived += ProcessOnErrorDataReceived;
+
+                    void ProcessOnErrorDataReceived(object sender, DataReceivedEventArgs e)
+                    {
+                        if (e.Data != null)
+                        {
+                            outputPane.OutputString(e.Data + Environment.NewLine);
+                        }
+                    }
+
+                    void ProcessOnOutputDataReceived(object sender, DataReceivedEventArgs e)
+                    {
+                        if (e.Data != null)
+                        {
+                            outputPane.OutputString(e.Data + Environment.NewLine);
+                        }
+                    }
+
+                    process.BeginOutputReadLine();
+                    process.BeginErrorReadLine();
+                    process.WaitForExit();
+                }
+            }
+            catch (Exception e)
+            {
+                outputPane.OutputString($"Error in run Command : {e.Message}{Environment.NewLine}");
+            }
         }
 
         public static void OpenDubFileinVisualStudioAP(string path)
@@ -165,8 +216,8 @@ namespace DockDAP.Ruls
             }
             else
             {
-                string projectDirectory = Path.GetDirectoryName(dte2.Solution.Projects.Item(1).FullName);
-                string newFilePath = Path.Combine(projectDirectory, "dub.json");
+                string projectDirectory = System.IO.Path.GetDirectoryName(dte2.Solution.Projects.Item(1).FullName);
+                string newFilePath = System.IO.Path.Combine(projectDirectory, "dub.json");
                 return DubManagerAP.CreateDubFileWithDefaultsAP(newFilePath);
             }
 
