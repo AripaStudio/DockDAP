@@ -16,9 +16,45 @@ namespace DockDAP.Ruls
 {
     public class DubConfigAP
     {
+        [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("description")]
         public string Description { get; set; }
+
+        [JsonProperty("authors")]
+        public List<string> Authors { get; set; } = new List<string>();
+
+        [JsonProperty("license")]
+        public string License { get; set; }
+
+        [JsonProperty("targetName")]
+        public string TargetName { get; set; }
+
+        [JsonProperty("targetType")]
+        public string TargetType { get; set; }
+
+        [JsonProperty("sourceFiles")]
+        public List<string> SourceFiles { get; set; } = new List<string>();
+
+        [JsonProperty("dependencies")]
         public Dictionary<string, string> Dependencies { get; set; } = new Dictionary<string, string>();
+
+        [JsonProperty("buildConfigurations")] 
+        public Dictionary<string, BuildConfiguration> BuildConfigurations { get; set; } = new Dictionary<string, BuildConfiguration>();
+
+        [JsonExtensionData]
+        public Dictionary<string, object> OtherData { get; set; } = new Dictionary<string, object>();
+
+    }
+
+    public class BuildConfiguration
+    {
+        [JsonProperty("dflags")]
+        public List<string> DFlags { get; set; } = new List<string>();
+
+        [JsonProperty("lflags")]
+        public List<string> LFlags { get; set; } = new List<string>();
     }
 
 
@@ -61,12 +97,7 @@ namespace DockDAP.Ruls
 
             string jsonString = File.ReadAllText(path);
 
-            JsonSerializerSettings settings = new JsonSerializerSettings
-            {
-                MissingMemberHandling = MissingMemberHandling.Ignore
-            };
-
-            return JsonConvert.DeserializeObject<DubConfigAP>(jsonString , settings);
+            return JsonConvert.DeserializeObject<DubConfigAP>(jsonString);
 
         }
 
