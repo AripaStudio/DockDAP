@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -220,6 +222,27 @@ namespace DockDAP.Ruls
                 string newFilePath = System.IO.Path.Combine(projectDirectory, "dub.json");
                 return DubManagerAP.CreateDubFileWithDefaultsAP(newFilePath);
             }
+
+        }
+
+        public static void BuildDubAP()
+        {
+            var PathFile = DubManagerAP.FindMainPathDte2AP();
+            if (PathFile == null)
+            {
+                return;
+            }
+
+            string FindDubFilePath = DubManagerAP.FindDubFileAP(PathFile);
+
+            if (FindDubFilePath == null)
+            {
+                return;
+            }
+
+            string ProjectPath = System.IO.Path.GetDirectoryName(FindDubFilePath);
+
+            DubCommandAP.BuildDubCommandAP(ProjectPath , "build");
 
         }
     }
