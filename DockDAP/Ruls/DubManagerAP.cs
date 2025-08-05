@@ -245,5 +245,23 @@ namespace DockDAP.Ruls
             DubCommandAP.BuildDubCommandAP(ProjectPath , "build");
 
         }
+
+        public static void OpenDubFileAP()
+        {
+            var PathFile = DubManagerAP.FindMainPathDte2AP();
+            if (PathFile == null)
+            {
+                return;
+            }
+
+            string FindDubFilePath = DubManagerAP.FindDubFileAP(PathFile);
+
+            if (FindDubFilePath == null)
+            {
+                return;
+            }
+
+            DubCommandAP.OpenDubFileinVisualStudioAP(FindDubFilePath);
+        }
     }
 }
