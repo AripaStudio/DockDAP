@@ -110,6 +110,7 @@
                 </TabControl>
                 <Button Name="BtnSaveDubFile" Margin="20" Background="Black" Content="Save File"
                         Foreground="White" Click="BtnSaveDubFile_OnClick"
+                        BorderThickness="3" BorderBrush="White"
                         ></Button>
             </StackPanel>
         </StackPanel>

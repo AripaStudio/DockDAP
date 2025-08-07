@@ -64,7 +64,7 @@ namespace DockDAP
 
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            APIdockAP.SaveFileAP(CurrentDubConfigAP);
         }
     }
 
