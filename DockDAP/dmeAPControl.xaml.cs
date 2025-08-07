@@ -8,21 +8,20 @@ namespace DockDAP
     /// <summary>
     /// Interaction logic for dmeAPControl.
     /// </summary>
+    
+    
     public partial class dmeAPControl : UserControl
     {
+        public DubConfigAP CurrentDubConfigAP;
+
         public dmeAPControl()
         {
             this.InitializeComponent();
+            CurrentDubConfigAP = APIdockAP.CreateOrLoadDubFileAP();
         }
 
         [SuppressMessage("Microsoft.Globalization", "CA1300:SpecifyMessageBoxOptions", Justification = "Sample code")]
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Default event handler naming pattern")]
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(
-                string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
-                "dmeAP");
-        }
 
         private void Btn_Telegram_Click(object sender, RoutedEventArgs e)
         {
@@ -52,5 +51,18 @@ namespace DockDAP
                 MessageBox.Show("Error in Create or Load Dub File");
             }
         }
+
+        private void BTNShowDubFileInVS_Click(object sender, RoutedEventArgs e)
+        {
+            APIdockAP.OpenDubFileAP();
+        }
+
+        private void BtnBuildDub_Click(object sender, RoutedEventArgs e)
+        {
+            APIdockAP.BuildDubAP();
+        }
     }
+
+
+
 }

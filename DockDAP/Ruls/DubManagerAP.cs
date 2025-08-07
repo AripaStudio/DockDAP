@@ -224,7 +224,6 @@ namespace DockDAP.Ruls
             }
 
         }
-
         public static void BuildDubAP()
         {
             var PathFile = DubManagerAP.FindMainPathDte2AP();
