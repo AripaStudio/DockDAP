@@ -23,25 +23,25 @@
                             <TabItem Header="Project">
                                 <StackPanel Margin="10">
                                     <Label Content="Name" />
-                                    <TextBox />
+                                    <TextBox Name="TXTnameDubFile"/>
                                     <Label Content="Description" />
-                                    <TextBox />
+                                    <TextBox Name="TXTdescriptionDubFile" />
                                     <Label Content="Authors" />
-                                    <TextBox />
+                                    <TextBox Name="TXTauthorsDubFile" />
                                     <Label Content="License" />
-                                    <TextBox />
+                                    <TextBox Name="TXTlicenseDubFile" />
                                     <Label Content="Target Name" />
-                                    <TextBox />
+                                    <TextBox Name="TXTtargetNameDubFile" />
                                     <Label Content="Target Type" />
-                                    <TextBox />
+                                    <TextBox Name="TXTtargetTypeDubFile" />
                                     <Label Content="Source Files" />
-                                    <TextBox />
+                                    <TextBox Name="TXTsourceFilesDubFile" />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Dependencies">
                                 <StackPanel Margin="10">
                                     <Label Content="Dependencies"/>
-                                    <TextBox />
+                                    <TextBox Name="TXTdependenciesDubFile" />
                                     <Button Content="Add Dependency"/>
                                     <ListBox Height="150" />
                                     <Button Content="Remove Selected Dependency"/>
@@ -55,9 +55,9 @@
                                         <ComboBoxItem Content="release"/>
                                     </ComboBox>
                                     <Label Content="dflags"/>
-                                    <TextBox />
+                                    <TextBox Name="TXTdflagsDubFile" />
                                     <Label Content="lflags"/>
-                                    <TextBox />
+                                    <TextBox Name="TXTlflagsDubFile" />
                                 </StackPanel>
                             </TabItem>
                         </TabControl>
