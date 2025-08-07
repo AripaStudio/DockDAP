@@ -43,7 +43,7 @@
                                     <Label Content="Dependencies"/>
                                     <TextBox Name="TXTdependenciesDubFile" />
                                     <Button Content="Add Dependency"/>
-                                    <ListBox Height="150" />
+                                    <ListBox Name="ListBoxDependency" Height="150" />
                                     <Button Content="Remove Selected Dependency"/>
                                 </StackPanel>
                             </TabItem>
@@ -108,6 +108,9 @@
 
                     </TabItem>
                 </TabControl>
+                <Button Name="BtnSaveDubFile" Margin="20" Background="Black" Content="Save File"
+                        Foreground="White" Click="BtnSaveDubFile_OnClick"
+                        ></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

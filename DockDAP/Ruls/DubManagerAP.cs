@@ -127,6 +127,30 @@ namespace DockDAP.Ruls
 
         }
 
+        public static bool SaveFileDubAP(string path , DubConfigAP inputConfigAp)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                return false;
+            }
+
+            if (!File.Exists(path))
+            {
+                return false;
+            }
+            try
+            {
+                var jsonString = JsonConvert.SerializeObject(inputConfigAp, Formatting.Indented);
+                File.WriteAllText(path, jsonString);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return false;
+        }
+
     }
 
     public static class DubCommandAP
@@ -261,6 +285,24 @@ namespace DockDAP.Ruls
             }
 
             DubCommandAP.OpenDubFileinVisualStudioAP(FindDubFilePath);
+        }
+
+        public static void SaveFileAP(DubConfigAP dubConfigAp)
+        {
+            var PathFile = DubManagerAP.FindMainPathDte2AP();
+            if (PathFile == null)
+            {
+                return;
+            }
+
+            string FindDubFilePath = DubManagerAP.FindDubFileAP(PathFile);
+
+            if (FindDubFilePath == null)
+            {
+                return;
+            }
+
+            DubManagerAP.SaveFileDubAP(FindDubFilePath , dubConfigAp);
         }
     }
 }
