@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DockDAPPackage.cs" />
+    <Compile Include="Ruls\AnimationManagerAP.cs" />
     <Compile Include="Ruls\BtnManagerAP.cs" />
     <Compile Include="Ruls\DubManagerAP.cs" />
   </ItemGroup>

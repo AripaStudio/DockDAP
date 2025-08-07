@@ -14,8 +14,8 @@
             <TextBlock Margin="10" Foreground="White" HorizontalAlignment="Center">Welcome to DockDAP by Aripa Pars Studio</TextBlock>
             <StackPanel>
                 <DockPanel>
-                    <Label  BorderBrush="White" BorderThickness="1" Content="Create dub.json File : " Foreground="White"></Label>
-                    <Button BorderBrush="White" Background="Black" Content="Create" Foreground="White " Click="Button_Click"></Button>
+                    <Label  BorderBrush="White" BorderThickness="1" Content="Create dub.json File : " Foreground="White"/>
+                    <Button BorderBrush="White" Background="Black" Content="Create" Foreground="White " Click="Button_Click"/>
                 </DockPanel>
                 <TabControl>
                     <TabItem FontSize="10" Header="dub Manager">
@@ -64,26 +64,26 @@
                     </TabItem>
                     <TabItem Header="show dub.json">
                         <StackPanel Background="Black">
-                            <Label Background="Black" Foreground="White" Content="Open dub.json in Visual Studio : " ></Label>
+                            <Label Background="Black" Foreground="White" Content="Open dub.json in Visual Studio : " />
                             <Button Name="BTNShowDubFileInVS"
                                 Content="Open file" Width="100" Height="30" Background="Black" Foreground="White"
                                     BorderBrush="White" BorderThickness="3" Margin="5" Click="BTNShowDubFileInVS_Click"
-                                    ></Button>
+                                    />
                             <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap" Text="If you don't have a dub.json file, you can create a new one using the button above." />
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Build with Dub">
                         <StackPanel Background="Black">
-                            <Label Background="Black" Foreground="White" Content="Build with Debug : " ></Label>
+                            <Label Background="Black" Foreground="White" Content="Build with Debug : " />
                             <Button Name="BtnBuildDebugDub"
                                 Content="Build Debug" Width="100" Height="30" Background="Black" Foreground="White"
                                         BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDub_Click"
-                                ></Button>
-                            <Label Background="Black" Foreground="White" Content="Build with Release : " ></Label>
+                                />
+                            <Label Background="Black" Foreground="White" Content="Build with Release : " />
                             <Button  Name="BtnBuildReleaseDub"
                                 Content="Build Release" Width="100" Height="30" Background="Black" Foreground="White"
                                         BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDub_Click"
-                                ></Button>
+                                />
 
                             <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap" Text="If you don't have a dub.json file, you can create a new one using the button above." />
                         </StackPanel>
