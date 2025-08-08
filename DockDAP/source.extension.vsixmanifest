@@ -5,6 +5,7 @@
         <DisplayName>DockDAP</DisplayName>
         <Description xml:space="preserve">a Dub Mangaer Extensions by Aripa Pars Studio (my name is "Khashayar Mobasheri(abolfazl))</Description>
         <License>LICENSE.txt</License>
+        <Icon>Resources\DockDAP_Icon2.png</Icon>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
