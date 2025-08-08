@@ -23,19 +23,19 @@
                             <TabItem Header="Project">
                                 <StackPanel Margin="10">
                                     <Label Content="Name" />
-                                    <TextBox Name="TXTnameDubFile"/>
+                                    <TextBox Name="TXTnameDubFile" MouseEnter="TXTnameDubFile_OnMouseEnter"/>
                                     <Label Content="Description" />
-                                    <TextBox Name="TXTdescriptionDubFile" />
+                                    <TextBox Name="TXTdescriptionDubFile" MouseEnter="TXTdescriptionDubFile_OnMouseEnter" />
                                     <Label Content="Authors" />
-                                    <TextBox Name="TXTauthorsDubFile" />
+                                    <TextBox Name="TXTauthorsDubFile" MouseEnter="TXTauthorsDubFile_OnMouseEnter" />
                                     <Label Content="License" />
-                                    <TextBox Name="TXTlicenseDubFile" />
+                                    <TextBox Name="TXTlicenseDubFile"  MouseEnter="TXTlicenseDubFile_OnMouseEnter" />
                                     <Label Content="Target Name" />
-                                    <TextBox Name="TXTtargetNameDubFile" />
+                                    <TextBox Name="TXTtargetNameDubFile"  MouseEnter="TXTtargetNameDubFile_OnMouseEnter" />
                                     <Label Content="Target Type" />
-                                    <TextBox Name="TXTtargetTypeDubFile" />
+                                    <TextBox Name="TXTtargetTypeDubFile"  MouseEnter="TXTtargetTypeDubFile_OnMouseEnter" />
                                     <Label Content="Source Files" />
-                                    <TextBox Name="TXTsourceFilesDubFile" />
+                                    <TextBox Name="TXTsourceFilesDubFile"  MouseEnter="TXTsourceFilesDubFile_OnMouseEnter" />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Dependencies">
@@ -55,9 +55,9 @@
                                         <ComboBoxItem Content="release"/>
                                     </ComboBox>
                                     <Label Content="dflags"/>
-                                    <TextBox Name="TXTdflagsDubFile" />
+                                    <TextBox Name="TXTdflagsDubFile" MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
                                     <Label Content="lflags"/>
-                                    <TextBox Name="TXTlflagsDubFile" />
+                                    <TextBox Name="TXTlflagsDubFile" MouseEnter="TXTlflagsDubFile_OnMouseEnter" />
                                 </StackPanel>
                             </TabItem>
                         </TabControl>

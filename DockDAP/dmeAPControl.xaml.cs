@@ -1,6 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
 using DockDAP.Ruls;
 
 namespace DockDAP
@@ -65,6 +68,57 @@ namespace DockDAP
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
             APIdockAP.SaveFileAP(CurrentDubConfigAP);
+        }
+
+
+        private void AnimationHover(FrameworkElement input)
+        {
+            AnimationManagerAP.AddHoverAnimation(input, 5, Colors.Black, Colors.CadetBlue, TimeSpan.FromSeconds(5));
+        }
+
+        private void TXTnameDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTnameDubFile);
+        }
+
+        private void TXTdescriptionDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTdescriptionDubFile);
+        }
+
+        private void TXTauthorsDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTauthorsDubFile);
+        }
+
+        private void TXTlicenseDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTlicenseDubFile);
+        }
+
+        private void TXTtargetNameDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTtargetNameDubFile);
+        }
+
+        private void TXTtargetTypeDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTtargetTypeDubFile);
+        }
+
+        private void TXTsourceFilesDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTsourceFilesDubFile);
+        }
+
+        private void TXTdflagsDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTdflagsDubFile);
+        }
+
+        private void TXTlflagsDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTlflagsDubFile);
         }
     }
 
