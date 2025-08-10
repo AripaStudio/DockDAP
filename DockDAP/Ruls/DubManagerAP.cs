@@ -1,22 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing.Text;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using EnvDTE;
 using EnvDTE80;
-using Microsoft.VisualStudio.PlatformUI;
-using Microsoft.VisualStudio.Settings.Internal;
 using Microsoft.VisualStudio.Shell;
 using Newtonsoft.Json;
-using Process = EnvDTE.Process;
 
 namespace DockDAP.Ruls
 {
@@ -127,7 +116,7 @@ namespace DockDAP.Ruls
 
         }
 
-        public static bool SaveFileDubAP(string path , DubConfigAP inputConfigAp)
+        public static  bool SaveFileDubAP(string path , DubConfigAP inputConfigAp)
         {
             if (string.IsNullOrEmpty(path))
             {

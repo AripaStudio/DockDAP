@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -67,7 +68,16 @@ namespace DockDAP
 
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
-            APIdockAP.SaveFileAP(CurrentDubConfigAP);
+
+            SaveFile();
+        }
+
+        private async Task SaveFile()
+        {
+            await Task.Run(() =>
+            {
+                APIdockAP.SaveFileAP(CurrentDubConfigAP);
+            });
         }
 
 
