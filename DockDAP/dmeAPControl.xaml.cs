@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using DockDAP.Ruls;
+using Microsoft.VisualStudio.CommandBars;
+using Microsoft.VisualStudio.Shell.Interop;
 
 namespace DockDAP
 {
@@ -68,9 +70,11 @@ namespace DockDAP
 
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
-
+            
             SaveFile();
         }
+        
+        
 
         private async Task SaveFile()
         {
@@ -132,6 +136,6 @@ namespace DockDAP
         }
     }
 
-
+   
 
 }

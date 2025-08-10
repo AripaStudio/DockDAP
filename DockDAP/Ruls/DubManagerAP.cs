@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
@@ -116,7 +117,16 @@ namespace DockDAP.Ruls
 
         }
 
-        public static  bool SaveFileDubAP(string path , DubConfigAP inputConfigAp)
+        public static DubConfigAP AddToConfigAp(string name, string description, List<string> authors, string license,
+            string targetName, string TargetType, List<string> sourceFiles, Dictionary<string, string> dependencies, Dictionary<string, BuildConfiguration> buildConfigurations
+            , Dictionary<string, object> otherData)
+        {
+            var configOutput = new DubConfigAP();
+
+            return configOutput;
+        }
+
+        public static bool SaveFileDubAP(string path , DubConfigAP inputConfigAp)
         {
             if (string.IsNullOrEmpty(path))
             {
@@ -130,7 +140,7 @@ namespace DockDAP.Ruls
             try
             {
                 var jsonString = JsonConvert.SerializeObject(inputConfigAp, Formatting.Indented);
-                File.WriteAllText(path, jsonString);
+                 System.IO.File.WriteAllText(path, jsonString);
                 return true;
             }
             catch (Exception e)
@@ -254,7 +264,7 @@ namespace DockDAP.Ruls
 
             string ProjectPath = System.IO.Path.GetDirectoryName(FindDubFilePath);
 
-            DubCommandAP.BuildDubCommandAP(ProjectPath , "build");
+            DubCommandAP.BuildDubCommandAP(ProjectPath, "build");
 
         }
 
@@ -291,7 +301,12 @@ namespace DockDAP.Ruls
                 return;
             }
 
-            DubManagerAP.SaveFileDubAP(FindDubFilePath , dubConfigAp);
+            DubManagerAP.SaveFileDubAP(FindDubFilePath, dubConfigAp);
+        }
+
+        public static DubConfigAP ADdToConfigAP()
+        {
+            return new DubConfigAP();
         }
     }
 }
