@@ -26,24 +26,56 @@
                                     <TextBox Name="TXTnameDubFile" MouseEnter="TXTnameDubFile_OnMouseEnter"/>
                                     <Label Content="Description" />
                                     <TextBox Name="TXTdescriptionDubFile" MouseEnter="TXTdescriptionDubFile_OnMouseEnter" />
-                                    <Label Content="Authors" />
-                                    <TextBox Name="TXTauthorsDubFile" MouseEnter="TXTauthorsDubFile_OnMouseEnter" />
                                     <Label Content="License" />
                                     <TextBox Name="TXTlicenseDubFile"  MouseEnter="TXTlicenseDubFile_OnMouseEnter" />
                                     <Label Content="Target Name" />
                                     <TextBox Name="TXTtargetNameDubFile"  MouseEnter="TXTtargetNameDubFile_OnMouseEnter" />
                                     <Label Content="Target Type" />
                                     <TextBox Name="TXTtargetTypeDubFile"  MouseEnter="TXTtargetTypeDubFile_OnMouseEnter" />
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem Header="Authors">
+                                <StackPanel>
+                                    <Label Content="Authors" />
+                                    <TextBox Name="TXTauthorsDubFile" MouseEnter="TXTauthorsDubFile_OnMouseEnter" />
+                                    <Button Name="Btn_AddAuthors" Content="Add Authors" Margin="0,0,0,10"
+                                            Click="Btn_AddAuthors_OnClick"
+                                            />
+                                    <ListBox x:Name="ListBoxAuthors" Height="150" ItemsSource="{Binding ListAuthors}"/>
+                                    <Button Name="Btn_DeleteAuthors" Content="Remove Selected Authors"
+                                            Click="Btn_DeleteAuthors_OnClick"
+                                            />
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem Header="Source Files">
+                                <StackPanel>
                                     <Label Content="Source Files" />
                                     <TextBox Name="TXTsourceFilesDubFile"  MouseEnter="TXTsourceFilesDubFile_OnMouseEnter" />
+                                    <Button Name="BtnAddSourceFile" Content="Add SourceFile" Margin="0,0,0,10"
+                                            Click="BtnAddSourceFile_OnClick"
+                                            />
+                                    <ListBox x:Name="ListBoxSourceFile" Height="150" ItemsSource="{Binding ListSourceFile}"/>
+                                    <Button Name="BtnDeleteSourceFile" Content="Remove Selected SourceFile"
+                                            Click="BtnDeleteSourceFile_OnClick"
+                                            />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Dependencies">
                                 <StackPanel Margin="10">
                                     <Label Content="Dependencies"/>
                                     <TextBox Name="TXTdependenciesDubFile" />
-                                    <Button Content="Add Dependency"/>
-                                    <ListBox Name="ListBoxDependency" Height="150" />
+                                    <Button Content="Add Dependency" Margin="0,0,0,10"/>
+                                    <ListBox Name="ListBoxDependency" Height="150"  >
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel HorizontalAlignment="Center">
+                                                    <TextBlock Text="{Binding Key}" FontWeight="Bold"/>
+                                                    <TextBlock Text=": "/>
+                                                    <TextBlock Text="{Binding Value}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
                                     <Button Content="Remove Selected Dependency"/>
                                 </StackPanel>
                             </TabItem>

@@ -116,27 +116,6 @@ namespace DockDAP.Ruls
             return config;
 
         }
-
-        public static DubConfigAP AddToConfigAp(string name, string description, List<string> authors, string license,
-            string targetName, string TargetType, List<string> sourceFiles, Dictionary<string, string> dependencies, Dictionary<string, BuildConfiguration> buildConfigurations
-            , Dictionary<string, object> otherData)
-        {
-            DubConfigAP configOutput;
-            configOutput = new DubConfigAP()
-            {
-                Name = name,
-                Description = description,
-                Authors = authors,
-                License = license,
-                BuildConfigurations = buildConfigurations,
-                Dependencies = dependencies,
-                SourceFiles = sourceFiles,
-                OtherData = otherData
-            };
-
-            return configOutput;
-        }
-
         public static bool SaveFileDubAP(string path , DubConfigAP inputConfigAp)
         {
             if (string.IsNullOrEmpty(path))
@@ -315,9 +294,24 @@ namespace DockDAP.Ruls
             DubManagerAP.SaveFileDubAP(FindDubFilePath, dubConfigAp);
         }
 
-        public static DubConfigAP ADdToConfigAP()
+        public static DubConfigAP AddToConfigAp(string name, string description, List<string> authors, string license,
+            string targetName, string TargetType, List<string> sourceFiles, Dictionary<string, string> dependencies, Dictionary<string, BuildConfiguration> buildConfigurations
+            , Dictionary<string, object> otherData)
         {
-            return new DubConfigAP();
+            DubConfigAP configOutput;
+            configOutput = new DubConfigAP()
+            {
+                Name = name,
+                Description = description,
+                Authors = authors,
+                License = license,
+                BuildConfigurations = buildConfigurations,
+                Dependencies = dependencies,
+                SourceFiles = sourceFiles,
+                OtherData = otherData
+            };
+
+            return configOutput;
         }
     }
 }
