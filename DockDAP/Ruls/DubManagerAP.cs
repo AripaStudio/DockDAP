@@ -121,7 +121,18 @@ namespace DockDAP.Ruls
             string targetName, string TargetType, List<string> sourceFiles, Dictionary<string, string> dependencies, Dictionary<string, BuildConfiguration> buildConfigurations
             , Dictionary<string, object> otherData)
         {
-            var configOutput = new DubConfigAP();
+            DubConfigAP configOutput;
+            configOutput = new DubConfigAP()
+            {
+                Name = name,
+                Description = description,
+                Authors = authors,
+                License = license,
+                BuildConfigurations = buildConfigurations,
+                Dependencies = dependencies,
+                SourceFiles = sourceFiles,
+                OtherData = otherData
+            };
 
             return configOutput;
         }
