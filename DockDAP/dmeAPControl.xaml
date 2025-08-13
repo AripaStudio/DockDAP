@@ -95,15 +95,31 @@
                             <TabItem Header="Build Configurations">
                                 <StackPanel Margin="10">
                                     <Label Content="Configurations"/>
-                                    <ComboBox Name="ComboBoxConfigurations">
+                                    <ComboBox Margin="0,0,0,10" Name="ComboBoxConfigurations">
                                         <ComboBoxItem Content="debug" IsSelected="True"/>
                                         <ComboBoxItem Content="release"/>
                                     </ComboBox>
-                                    <Label Content="dflags"/>
-                                    <TextBox Name="TXTdflagsDubFile" MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
-                                    <Label Content="lflags"/>
-                                    <TextBox Name="TXTlflagsDubFile" MouseEnter="TXTlflagsDubFile_OnMouseEnter" />
-                                </StackPanel>
+                                    <TabControl BorderBrush="Black" BorderThickness="3" Background="DarkGray">
+                                        <TabItem Header="dflags">
+                                            <StackPanel>
+                                                <Label Content="dflags"/>
+                                                <TextBox Name="TXTdflagsDubFile" MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
+                                                <Button Content="Add dflags"></Button>
+                                                <ListBox Height="100"></ListBox>
+                                                <Button Content="Remove dflags"></Button>
+
+                                            </StackPanel>
+                                        </TabItem>
+                                        <TabItem Header="lflags">
+                                            <StackPanel>
+                                                <Label Content=" add lflags : "/>
+                                                <TextBox Name="TXTlflagsDubFile"  Margin="0,0,0,10" MouseEnter="TXTlflagsDubFile_OnMouseEnter" />
+                                                <Button Content="Add lflags"></Button>
+                                                <ListBox Height="100"></ListBox>
+                                                <Button Content="Remove lflags"></Button>
+                                            </StackPanel>
+                                        </TabItem>
+                                    </TabControl>                                </StackPanel>
                             </TabItem>
                         </TabControl>
                     </TabItem>
