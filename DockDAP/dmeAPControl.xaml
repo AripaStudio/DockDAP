@@ -122,18 +122,19 @@
                             <Label Background="Black" Foreground="White" Content="Build with Debug : " />
                             <Button Name="BtnBuildDebugDub"
                                 Content="Build Debug" Width="100" Height="30" Background="Black" Foreground="White"
-                                        BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDub_Click"
+                                        BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDebugDub_Click"
                                 />
                             <Label Background="Black" Foreground="White" Content="Build with Release : " />
                             <Button  Name="BtnBuildReleaseDub"
                                 Content="Build Release" Width="100" Height="30" Background="Black" Foreground="White"
-                                        BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDub_Click"
+                                        BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildReleaseDub_OnClick"
                                 />
 
                             <Label Background="Black" Foreground="White" Content="Build with Default : " />
                             <Button  Name="BtnBuildDefaultDub"
                                      Content="Build Default" Width="100" Height="30" Background="Black" Foreground="White"
                                      BorderBrush="White" BorderThickness="3" Margin="5" 
+                                     Click="BtnBuildDefaultDub_OnClick"
                             />
 
                             <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap" Text="If you don't have a dub.json file, you can create a new one using the button above." />

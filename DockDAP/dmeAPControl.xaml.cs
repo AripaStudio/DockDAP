@@ -80,9 +80,20 @@ namespace DockDAP
             APIdockAP.OpenDubFileAP();
         }
 
-        private void BtnBuildDub_Click(object sender, RoutedEventArgs e)
+        private void BtnBuildDebugDub_Click(object sender, RoutedEventArgs e)
+        {
+         APIdockAP.BuildDebugDubAP();   
+        }
+
+        private void BtnBuildReleaseDub_OnClick(object sender, RoutedEventArgs e)
+        {
+            APIdockAP.BuildReleaseDubAP();
+        }
+
+        private void BtnBuildDefaultDub_OnClick(object sender, RoutedEventArgs e)
         {
             APIdockAP.BuildDubAP();
+
         }
 
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
@@ -226,6 +237,9 @@ namespace DockDAP
                 DictionaryDependencies.Remove(dependencyKey);
             }
         }
+
+
+        
     }
 
    
