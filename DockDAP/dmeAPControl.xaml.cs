@@ -93,8 +93,9 @@ namespace DockDAP
             var targetName = TXTtargetNameDubFile.Text;
             var targetType = TXTtargetTypeDubFile.Text;
 
-            APIdockAP.AddToConfigAp(Name, Description, ListAuthors.ToList(), license, targetName,
+           var DubConfig =  APIdockAP.AddToConfigAp(Name, Description, ListAuthors.ToList(), license, targetName,
                 targetType, ListSourceFile.ToList() , DictionaryDependencies, DictionaryBuildConfigurations, DictionaryOtherData);
+           CurrentDubConfigAP = DubConfig;
             SaveFile();
         }
         
