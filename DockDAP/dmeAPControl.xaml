@@ -63,8 +63,19 @@
                             <TabItem Header="Dependencies">
                                 <StackPanel Margin="10">
                                     <Label Content="Dependencies"/>
-                                    <TextBox Name="TXTdependenciesDubFile" />
-                                    <Button Content="Add Dependency" Margin="0,0,0,10"/>
+                                    <DockPanel>
+                                        <Label>Key : </Label>
+                                        <TextBox Name="TXTdependenciesKeyDubFile" Width="250"  BorderBrush="Black"
+                                                 BorderThickness="3"
+                                                 />
+                                        <Label>Value :</Label>
+                                        <TextBox Name="TXTdependenciesValueDubFile"
+                                                 BorderBrush="Black" BorderThickness="3"
+                                                 />
+                                    </DockPanel>
+                                    <Button Name="Btn_AddDependency" Content="Add Dependency" Margin="0,0,0,10"
+                                            Click="Btn_AddDependency_OnClick"
+                                            />
                                     <ListBox Name="ListBoxDependency" Height="150"  >
                                         <ListBox.ItemTemplate>
                                             <DataTemplate>
@@ -76,7 +87,9 @@
                                             </DataTemplate>
                                         </ListBox.ItemTemplate>
                                     </ListBox>
-                                    <Button Content="Remove Selected Dependency"/>
+                                    <Button Name="Btn_DeleteDependency" Content="Remove Selected Dependency"
+                                            Click="Btn_DeleteDependency_OnClick"
+                                            />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Build Configurations">

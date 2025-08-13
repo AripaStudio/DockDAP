@@ -201,6 +201,31 @@ namespace DockDAP
                 ListSourceFile.Remove(selectedItem as string);
             }
         }
+
+        private void Btn_AddDependency_OnClick(object sender, RoutedEventArgs e)
+        {
+            var DependencyKey = TXTdependenciesKeyDubFile.Text;
+            var DependencyValue = TXTdependenciesValueDubFile.Text;
+            if (string.IsNullOrEmpty(DependencyKey) || string.IsNullOrEmpty(DependencyValue))
+            {
+                MessageBox.Show("Dependency TextBox Key/Value is Empty or is Null , Please Enter a Text in TextBox");
+            }
+
+            DictionaryDependencies.Add(DependencyKey , DependencyValue);
+
+
+        }
+
+        private void Btn_DeleteDependency_OnClick(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = ListBoxDependency.SelectedItem;
+            if (selectedItem != null)
+            {
+                var dependency = (KeyValuePair<string, string>)selectedItem;
+                var dependencyKey = dependency.Key;
+                DictionaryDependencies.Remove(dependencyKey);
+            }
+        }
     }
 
    
