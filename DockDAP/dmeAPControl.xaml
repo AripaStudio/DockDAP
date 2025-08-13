@@ -95,7 +95,7 @@
                             <TabItem Header="Build Configurations">
                                 <StackPanel Margin="10">
                                     <Label Content="Configurations"/>
-                                    <ComboBox>
+                                    <ComboBox Name="ComboBoxConfigurations">
                                         <ComboBoxItem Content="debug" IsSelected="True"/>
                                         <ComboBoxItem Content="release"/>
                                     </ComboBox>

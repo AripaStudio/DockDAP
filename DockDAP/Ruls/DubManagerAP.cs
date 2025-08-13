@@ -258,6 +258,46 @@ namespace DockDAP.Ruls
 
         }
 
+        public static void BuildDebugDubAP()
+        {
+            var PathFile = DubManagerAP.FindMainPathDte2AP();
+            if (PathFile == null)
+            {
+                return;
+            }
+
+            string FindDubFilePath = DubManagerAP.FindDubFileAP(PathFile);
+
+            if (FindDubFilePath == null)
+            {
+                return;
+            }
+
+            string ProjectPath = System.IO.Path.GetDirectoryName(FindDubFilePath);
+
+            DubCommandAP.BuildDubCommandAP(ProjectPath, " build  --build=debug");
+
+        }
+        public static void BuildReleaseDubAP()
+        {
+            var PathFile = DubManagerAP.FindMainPathDte2AP();
+            if (PathFile == null)
+            {
+                return;
+            }
+
+            string FindDubFilePath = DubManagerAP.FindDubFileAP(PathFile);
+
+            if (FindDubFilePath == null)
+            {
+                return;
+            }
+
+            string ProjectPath = System.IO.Path.GetDirectoryName(FindDubFilePath);
+
+            DubCommandAP.BuildDubCommandAP(ProjectPath, "build  --build=release");
+
+        }
         public static void OpenDubFileAP()
         {
             var PathFile = DubManagerAP.FindMainPathDte2AP();
