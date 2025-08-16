@@ -135,18 +135,27 @@
                     </TabItem>
                     <TabItem Header="Build with Dub">
                         <StackPanel Background="Black">
-                            <Label Background="Black" Foreground="White" Content="Build with Debug : " />
+                            <TextBox Background="Black" Foreground="White"
+                                   Text="Build with Debug(dub build --build=debug)(use of Custom Configurations :" 
+                                   TextWrapping="Wrap"
+
+                                   />
                             <Button Name="BtnBuildDebugDub"
                                 Content="Build Debug" Width="100" Height="30" Background="Black" Foreground="White"
                                         BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDebugDub_Click"
                                 />
-                            <Label Background="Black" Foreground="White" Content="Build with Release : " />
+                            <TextBox Background="Black" Foreground="White"
+                                   Text="Build with Release(dub build --build=release)(use of Custom Configurations : "
+                                   TextWrapping="Wrap"
+                                   />
+
                             <Button  Name="BtnBuildReleaseDub"
                                 Content="Build Release" Width="100" Height="30" Background="Black" Foreground="White"
                                         BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildReleaseDub_OnClick"
                                 />
 
-                            <Label Background="Black" Foreground="White" Content="Build with Default : " />
+                            <Label Background="Black" Foreground="White" 
+                                   Content="Build with Default(dub build) : " />
                             <Button  Name="BtnBuildDefaultDub"
                                      Content="Build Default" Width="100" Height="30" Background="Black" Foreground="White"
                                      BorderBrush="White" BorderThickness="3" Margin="5" 
