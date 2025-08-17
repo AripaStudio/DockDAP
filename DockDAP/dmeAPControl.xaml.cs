@@ -31,6 +31,7 @@ namespace DockDAP
         private Dictionary<string, object> DictionaryOtherData = new Dictionary<string, object>();
         
 
+
         public dmeAPControl()
         {
             this.InitializeComponent();
@@ -38,7 +39,8 @@ namespace DockDAP
             ListBoxAuthors.ItemsSource = ListAuthors;
             ListBoxSourceFile.ItemsSource = ListSourceFile;
             ListBoxDependency.ItemsSource = DictionaryDependencies;
-
+            
+            
 
             DataContext = this;
         }
@@ -66,7 +68,7 @@ namespace DockDAP
             BtnManagerAP.OpenLinkAP("https://github.com/AripaStudio/DockDAP");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_CreateDubFile_Click(object sender, RoutedEventArgs e)
         {
             DubConfigAP dubConfigAp = APIdockAP.CreateOrLoadDubFileAP();
             if (dubConfigAp == null)
@@ -239,7 +241,20 @@ namespace DockDAP
         }
 
 
-        
+        private void BtndflagsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void BtndflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void TXTConfigurationsAdd_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTConfigurationsAddDubFile);
+        }
     }
 
    

@@ -15,7 +15,7 @@
             <StackPanel>
                 <DockPanel>
                     <Label  BorderBrush="White" BorderThickness="1" Content="Create dub.json File : " Foreground="White"/>
-                    <Button BorderBrush="White" Background="Black" Content="Create" Foreground="White " Click="Button_Click"/>
+                    <Button Name="Btn_CreateDubFile" BorderBrush="White" Background="Black" Content="Create" Foreground="White " Click="Btn_CreateDubFile_Click"/>
                 </DockPanel>
                 <TabControl>
                     <TabItem FontSize="10" Header="dub Manager">
@@ -95,18 +95,18 @@
                             <TabItem Header="Build Configurations">
                                 <StackPanel Margin="10">
                                     <Label Content="Configurations"/>
-                                    <ComboBox Margin="0,0,0,10" Name="ComboBoxConfigurations">
-                                        <ComboBoxItem Content="debug" IsSelected="True"/>
-                                        <ComboBoxItem Content="release"/>
-                                    </ComboBox>
                                     <TabControl BorderBrush="Black" BorderThickness="3" Background="DarkGray">
                                         <TabItem Header="dflags">
                                             <StackPanel>
                                                 <Label Content="dflags"/>
-                                                <TextBox Name="TXTdflagsDubFile" MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
-                                                <Button Content="Add dflags"></Button>
-                                                <ListBox Height="100"></ListBox>
-                                                <Button Content="Remove dflags"></Button>
+                                                <TextBox  Name="TXTdflagsDubFile" MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
+                                                <Button Name="BtndflagsDubFileAdd" Content="Add dflags" 
+                                                        Click="BtndflagsDubFileAdd_OnClick"
+                                                        ></Button>
+                                                <ListBox Name="ListboxDflagsDubFile" Height="100"></ListBox>
+                                                <Button Name="BtndflagsDubFileRemove" Content="Remove dflags"
+                                                        Click="BtndflagsDubFileRemove_OnClick"
+                                                        ></Button>
 
                                             </StackPanel>
                                         </TabItem>
@@ -114,9 +114,18 @@
                                             <StackPanel>
                                                 <Label Content=" add lflags : "/>
                                                 <TextBox Name="TXTlflagsDubFile"  Margin="0,0,0,10" MouseEnter="TXTlflagsDubFile_OnMouseEnter" />
-                                                <Button Content="Add lflags"></Button>
-                                                <ListBox Height="100"></ListBox>
-                                                <Button Content="Remove lflags"></Button>
+                                                <Button Name="BtnlflagsDubFileAdd" Content="Add lflags"></Button>
+                                                <ListBox Name="ListBoxLflagsDubFile" Height="100"></ListBox>
+                                                <Button Name="BtnlflagsDubFileRemove" Content="Remove lflags"></Button>
+                                            </StackPanel>
+                                        </TabItem>
+                                        <TabItem Header="Configurations" >
+                                            <StackPanel>
+                                                <Label Content=" add Configurations : "/>
+                                                <TextBox Name="TXTConfigurationsAddDubFile"  Margin="0,0,0,10" MouseEnter="TXTConfigurationsAdd_OnMouseEnter"  />
+                                                <Button Name="BtnConfigurationsAddDubFile" Content="Add Configurations"></Button>
+                                                <ListBox Name="ListBoxConfigurationsDubFile" Height="100"></ListBox>
+                                                <Button Name="BtnConfigurationsRemoveDubFile" Content="Remove Configurations"></Button>
                                             </StackPanel>
                                         </TabItem>
                                     </TabControl>                                </StackPanel>
