@@ -19,17 +19,17 @@ namespace DockDAP
     /// <summary>
     /// Interaction logic for dmeAPControl.
     /// </summary>
-    
-    
     public partial class dmeAPControl : UserControl
     {
         public DubConfigAP CurrentDubConfigAP;
         private ObservableCollection<string> ListAuthors = new ObservableCollection<string>();
         private ObservableCollection<string> ListSourceFile = new ObservableCollection<string>();
-        private Dictionary<string , string> DictionaryDependencies = new Dictionary<string , string>();
-        private Dictionary<string , BuildConfiguration> DictionaryBuildConfigurations = new Dictionary<string , BuildConfiguration>();
+        private Dictionary<string, string> DictionaryDependencies = new Dictionary<string, string>();
+
+        private Dictionary<string, BuildConfiguration> DictionaryBuildConfigurations =
+            new Dictionary<string, BuildConfiguration>();
+
         private Dictionary<string, object> DictionaryOtherData = new Dictionary<string, object>();
-        
 
 
         public dmeAPControl()
@@ -39,15 +39,14 @@ namespace DockDAP
             ListBoxAuthors.ItemsSource = ListAuthors;
             ListBoxSourceFile.ItemsSource = ListSourceFile;
             ListBoxDependency.ItemsSource = DictionaryDependencies;
-            
-            
+
 
             DataContext = this;
         }
 
         [SuppressMessage("Microsoft.Globalization", "CA1300:SpecifyMessageBoxOptions", Justification = "Sample code")]
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Default event handler naming pattern")]
-
+        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter",
+            Justification = "Default event handler naming pattern")]
         private void Btn_Telegram_Click(object sender, RoutedEventArgs e)
         {
             BtnManagerAP.OpenLinkAP("https://t.me/AripaStudio");
@@ -84,7 +83,7 @@ namespace DockDAP
 
         private void BtnBuildDebugDub_Click(object sender, RoutedEventArgs e)
         {
-         APIdockAP.BuildDebugDubAP();   
+            APIdockAP.BuildDebugDubAP();
         }
 
         private void BtnBuildReleaseDub_OnClick(object sender, RoutedEventArgs e)
@@ -95,7 +94,6 @@ namespace DockDAP
         private void BtnBuildDefaultDub_OnClick(object sender, RoutedEventArgs e)
         {
             APIdockAP.BuildDubAP();
-
         }
 
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
@@ -106,20 +104,17 @@ namespace DockDAP
             var targetName = TXTtargetNameDubFile.Text;
             var targetType = TXTtargetTypeDubFile.Text;
 
-           var DubConfig =  APIdockAP.AddToConfigAp(Name, Description, ListAuthors.ToList(), license, targetName,
-                targetType, ListSourceFile.ToList() , DictionaryDependencies, DictionaryBuildConfigurations, DictionaryOtherData);
-           CurrentDubConfigAP = DubConfig;
+            var DubConfig = APIdockAP.AddToConfigAp(Name, Description, ListAuthors.ToList(), license, targetName,
+                targetType, ListSourceFile.ToList(), DictionaryDependencies, DictionaryBuildConfigurations,
+                DictionaryOtherData);
+            CurrentDubConfigAP = DubConfig;
             SaveFile();
         }
-        
-        
+
 
         private async Task SaveFile()
         {
-            await Task.Run(() =>
-            {
-                APIdockAP.SaveFileAP(CurrentDubConfigAP);
-            });
+            await Task.Run(() => { APIdockAP.SaveFileAP(CurrentDubConfigAP); });
         }
 
 
@@ -202,6 +197,7 @@ namespace DockDAP
             {
                 MessageBox.Show("sourceFile TextBox is Empty or is Null , Please Enter a Text in TextBox");
             }
+
             ListSourceFile.Add(sourceFile);
         }
 
@@ -224,9 +220,7 @@ namespace DockDAP
                 MessageBox.Show("Dependency TextBox Key/Value is Empty or is Null , Please Enter a Text in TextBox");
             }
 
-            DictionaryDependencies.Add(DependencyKey , DependencyValue);
-
-
+            DictionaryDependencies.Add(DependencyKey, DependencyValue);
         }
 
         private void Btn_DeleteDependency_OnClick(object sender, RoutedEventArgs e)
@@ -243,12 +237,10 @@ namespace DockDAP
 
         private void BtndflagsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
         {
-            
         }
 
         private void BtndflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
-            
         }
 
         private void TXTConfigurationsAdd_OnMouseEnter(object sender, MouseEventArgs e)
@@ -256,7 +248,4 @@ namespace DockDAP
             AnimationHover(TXTConfigurationsAddDubFile);
         }
     }
-
-   
-
 }

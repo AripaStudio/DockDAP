@@ -39,24 +39,23 @@ namespace DockDAP.Ruls
             Storyboard.SetTarget(Widthanimation, targetElement);
             Storyboard.SetTargetProperty(Widthanimation, new PropertyPath("Width"));
 
-            Storyboard.SetTarget(Backanimation , targetElement);
-            Storyboard.SetTargetProperty(Backanimation , new PropertyPath("(Background).(SolidColorBrush.Color)"));
+            Storyboard.SetTarget(Backanimation, targetElement);
+            Storyboard.SetTargetProperty(Backanimation, new PropertyPath("(Background).(SolidColorBrush.Color)"));
 
             Storyboard.SetTarget(Foreanimation, targetElement);
             Storyboard.SetTargetProperty(Foreanimation, new PropertyPath("(Foreground).(SolidColorBrush.Color)"));
 
             storyBoard.Begin();
-
         }
 
 
-
-        public static void AnimateWidthList(List<FrameworkElement> targetElementList, double toWidth, TimeSpan duration , Color toBackgroundColor,
+        public static void AnimateWidthList(List<FrameworkElement> targetElementList, double toWidth, TimeSpan duration,
+            Color toBackgroundColor,
             Color toForegroundColor)
         {
             foreach (var frameworkElement in targetElementList)
             {
-              AnimateWidth(frameworkElement , toWidth , toBackgroundColor , toForegroundColor , duration);
+                AnimateWidth(frameworkElement, toWidth, toBackgroundColor, toForegroundColor, duration);
             }
         }
 
@@ -74,9 +73,6 @@ namespace DockDAP.Ruls
             {
                 AnimateWidth(element, 100, normalColor, Colors.Black, duration);
             };
-
         }
-
-        
     }
 }

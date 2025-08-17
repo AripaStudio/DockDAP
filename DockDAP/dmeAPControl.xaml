@@ -7,31 +7,33 @@
              Background="Black"
              Foreground="White"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="400"
+             d:DesignHeight="550" d:DesignWidth="400"
              Name="MyToolWindow">
     <Grid Background="Black">
         <StackPanel Orientation="Vertical">
             <TextBlock Margin="10" Foreground="White" HorizontalAlignment="Center">Welcome to DockDAP by Aripa Pars Studio</TextBlock>
             <StackPanel>
                 <DockPanel>
-                    <Label  BorderBrush="White" BorderThickness="1" Content="Create dub.json File : " Foreground="White"/>
-                    <Button Name="Btn_CreateDubFile" BorderBrush="White" Background="Black" Content="Create" Foreground="White " Click="Btn_CreateDubFile_Click"/>
+                    <Label BorderBrush="White" BorderThickness="1" Content="Create dub.json File : " Foreground="White" />
+                    <Button Name="Btn_CreateDubFile" BorderBrush="White" Background="Black" Content="Create"
+                            Foreground="White " Click="Btn_CreateDubFile_Click" />
                 </DockPanel>
                 <TabControl>
                     <TabItem FontSize="10" Header="dub Manager">
-                        <TabControl Background="DarkGray" >
+                        <TabControl Background="DarkGray">
                             <TabItem Header="Project">
                                 <StackPanel Margin="10">
                                     <Label Content="Name" />
-                                    <TextBox Name="TXTnameDubFile" MouseEnter="TXTnameDubFile_OnMouseEnter"/>
+                                    <TextBox Name="TXTnameDubFile" MouseEnter="TXTnameDubFile_OnMouseEnter" />
                                     <Label Content="Description" />
-                                    <TextBox Name="TXTdescriptionDubFile" MouseEnter="TXTdescriptionDubFile_OnMouseEnter" />
+                                    <TextBox Name="TXTdescriptionDubFile"
+                                             MouseEnter="TXTdescriptionDubFile_OnMouseEnter" />
                                     <Label Content="License" />
-                                    <TextBox Name="TXTlicenseDubFile"  MouseEnter="TXTlicenseDubFile_OnMouseEnter" />
+                                    <TextBox Name="TXTlicenseDubFile" MouseEnter="TXTlicenseDubFile_OnMouseEnter" />
                                     <Label Content="Target Name" />
-                                    <TextBox Name="TXTtargetNameDubFile"  MouseEnter="TXTtargetNameDubFile_OnMouseEnter" />
+                                    <TextBox Name="TXTtargetNameDubFile" MouseEnter="TXTtargetNameDubFile_OnMouseEnter" />
                                     <Label Content="Target Type" />
-                                    <TextBox Name="TXTtargetTypeDubFile"  MouseEnter="TXTtargetTypeDubFile_OnMouseEnter" />
+                                    <TextBox Name="TXTtargetTypeDubFile" MouseEnter="TXTtargetTypeDubFile_OnMouseEnter" />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Authors">
@@ -39,96 +41,174 @@
                                     <Label Content="Authors" />
                                     <TextBox Name="TXTauthorsDubFile" MouseEnter="TXTauthorsDubFile_OnMouseEnter" />
                                     <Button Name="Btn_AddAuthors" Content="Add Authors" Margin="0,0,0,10"
-                                            Click="Btn_AddAuthors_OnClick"
-                                            />
-                                    <ListBox x:Name="ListBoxAuthors" Height="150" ItemsSource="{Binding ListAuthors}"/>
+                                            Click="Btn_AddAuthors_OnClick" />
+                                    <ListBox x:Name="ListBoxAuthors" Height="150" ItemsSource="{Binding ListAuthors}" />
                                     <Button Name="Btn_DeleteAuthors" Content="Remove Selected Authors"
-                                            Click="Btn_DeleteAuthors_OnClick"
-                                            />
+                                            Click="Btn_DeleteAuthors_OnClick" />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Source Files">
                                 <StackPanel>
                                     <Label Content="Source Files" />
-                                    <TextBox Name="TXTsourceFilesDubFile"  MouseEnter="TXTsourceFilesDubFile_OnMouseEnter" />
+                                    <TextBox Name="TXTsourceFilesDubFile"
+                                             MouseEnter="TXTsourceFilesDubFile_OnMouseEnter" />
                                     <Button Name="BtnAddSourceFile" Content="Add SourceFile" Margin="0,0,0,10"
-                                            Click="BtnAddSourceFile_OnClick"
-                                            />
-                                    <ListBox x:Name="ListBoxSourceFile" Height="150" ItemsSource="{Binding ListSourceFile}"/>
+                                            Click="BtnAddSourceFile_OnClick" />
+                                    <ListBox x:Name="ListBoxSourceFile" Height="150"
+                                             ItemsSource="{Binding ListSourceFile}" />
                                     <Button Name="BtnDeleteSourceFile" Content="Remove Selected SourceFile"
-                                            Click="BtnDeleteSourceFile_OnClick"
-                                            />
+                                            Click="BtnDeleteSourceFile_OnClick" />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Dependencies">
                                 <StackPanel Margin="10">
-                                    <Label Content="Dependencies"/>
+                                    <Label Content="Dependencies" />
                                     <DockPanel>
-                                        <Label>Key : </Label>
-                                        <TextBox Name="TXTdependenciesKeyDubFile" Width="250"  BorderBrush="Black"
-                                                 BorderThickness="3"
-                                                 />
+                                        <Label>Key :</Label>
+                                        <TextBox Name="TXTdependenciesKeyDubFile" Width="250" BorderBrush="Black"
+                                                 BorderThickness="3" />
                                         <Label>Value :</Label>
                                         <TextBox Name="TXTdependenciesValueDubFile"
-                                                 BorderBrush="Black" BorderThickness="3"
-                                                 />
+                                                 BorderBrush="Black" BorderThickness="3" />
                                     </DockPanel>
                                     <Button Name="Btn_AddDependency" Content="Add Dependency" Margin="0,0,0,10"
-                                            Click="Btn_AddDependency_OnClick"
-                                            />
-                                    <ListBox Name="ListBoxDependency" Height="150"  >
+                                            Click="Btn_AddDependency_OnClick" />
+                                    <ListBox Name="ListBoxDependency" Height="150">
                                         <ListBox.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel HorizontalAlignment="Center">
-                                                    <TextBlock Text="{Binding Key}" FontWeight="Bold"/>
-                                                    <TextBlock Text=": "/>
-                                                    <TextBlock Text="{Binding Value}"/>
+                                                    <TextBlock Text="{Binding Key}" FontWeight="Bold" />
+                                                    <TextBlock Text=": " />
+                                                    <TextBlock Text="{Binding Value}" />
                                                 </StackPanel>
                                             </DataTemplate>
                                         </ListBox.ItemTemplate>
                                     </ListBox>
                                     <Button Name="Btn_DeleteDependency" Content="Remove Selected Dependency"
-                                            Click="Btn_DeleteDependency_OnClick"
-                                            />
+                                            Click="Btn_DeleteDependency_OnClick" />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Build Configurations">
-                                <StackPanel Margin="10">
-                                    <Label Content="Configurations"/>
-                                    <TabControl BorderBrush="Black" BorderThickness="3" Background="DarkGray">
-                                        <TabItem Header="dflags">
-                                            <StackPanel>
-                                                <Label Content="dflags"/>
-                                                <TextBox  Name="TXTdflagsDubFile" MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
-                                                <Button Name="BtndflagsDubFileAdd" Content="Add dflags" 
-                                                        Click="BtndflagsDubFileAdd_OnClick"
-                                                        ></Button>
-                                                <ListBox Name="ListboxDflagsDubFile" Height="100"></ListBox>
-                                                <Button Name="BtndflagsDubFileRemove" Content="Remove dflags"
-                                                        Click="BtndflagsDubFileRemove_OnClick"
-                                                        ></Button>
+                                <Grid Margin="10" Background="#2D2D30">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
 
-                                            </StackPanel>
-                                        </TabItem>
-                                        <TabItem Header="lflags">
-                                            <StackPanel>
-                                                <Label Content=" add lflags : "/>
-                                                <TextBox Name="TXTlflagsDubFile"  Margin="0,0,0,10" MouseEnter="TXTlflagsDubFile_OnMouseEnter" />
-                                                <Button Name="BtnlflagsDubFileAdd" Content="Add lflags"></Button>
-                                                <ListBox Name="ListBoxLflagsDubFile" Height="100"></ListBox>
-                                                <Button Name="BtnlflagsDubFileRemove" Content="Remove lflags"></Button>
-                                            </StackPanel>
-                                        </TabItem>
-                                        <TabItem Header="Configurations" >
-                                            <StackPanel>
-                                                <Label Content=" add Configurations : "/>
-                                                <TextBox Name="TXTConfigurationsAddDubFile"  Margin="0,0,0,10" MouseEnter="TXTConfigurationsAdd_OnMouseEnter"  />
-                                                <Button Name="BtnConfigurationsAddDubFile" Content="Add Configurations"></Button>
-                                                <ListBox Name="ListBoxConfigurationsDubFile" Height="100"></ListBox>
-                                                <Button Name="BtnConfigurationsRemoveDubFile" Content="Remove Configurations"></Button>
-                                            </StackPanel>
-                                        </TabItem>
-                                    </TabControl>                                </StackPanel>
+                                    <Label Content="Build Configurations"
+                                           Foreground="#F1F1F1"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Margin="0,0,0,10" />
+
+                                    <GroupBox Header="Configurations"
+                                              Grid.Row="1"
+                                              BorderBrush="#3F3F46"
+                                              BorderThickness="1"
+                                              Foreground="#F1F1F1">
+                                        <StackPanel Margin="10">
+                                            <TabControl BorderBrush="#3F3F46"
+                                                        BorderThickness="1"
+                                                        Background="#252526"
+                                                        Foreground="#F1F1F1"
+                                                        Padding="5">
+
+                                                <TabItem Header="dflags">
+                                                    <StackPanel Margin="10">
+                                                        <Label Content="D Flags"
+                                                               Foreground="#CCCCCC" />
+                                                        <TextBox Name="TXTdflagsDubFile"
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5" />
+                                                        <Button Name="BtndflagsDubFileAdd"
+                                                                Content="Add D Flag"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold" />
+                                                        <ListBox Name="ListboxDflagsDubFile"
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
+                                                        <Button Name="BtndflagsDubFileRemove"
+                                                                Content="Remove D Flag"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold" />
+                                                    </StackPanel>
+                                                </TabItem>
+
+                                                <TabItem Header="lflags">
+                                                    <StackPanel Margin="10">
+                                                        <Label Content="L Flags"
+                                                               Foreground="#CCCCCC" />
+                                                        <TextBox Name="TXTlflagsDubFile"
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5" />
+                                                        <Button Name="BtnlflagsDubFileAdd"
+                                                                Content="Add L Flag"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold" />
+                                                        <ListBox Name="ListBoxLflagsDubFile"
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
+                                                        <Button Name="BtnlflagsDubFileRemove"
+                                                                Content="Remove L Flag"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold" />
+                                                    </StackPanel>
+                                                </TabItem>
+
+                                                <TabItem Header="Add/Remove Configs">
+                                                    <StackPanel Margin="10">
+                                                        <Label Content="Configuration Name"
+                                                               Foreground="#CCCCCC" />
+                                                        <TextBox Name="TXTConfigurationsAddDubFile"
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5" />
+                                                        <Button Name="BtnConfigurationsAddDubFile"
+                                                                Content="Add Configuration"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold" />
+                                                        <ListBox Name="ListBoxConfigurationsDubFile"
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
+                                                        <Button Name="BtnConfigurationsRemoveDubFile"
+                                                                Content="Remove Configuration"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold" />
+                                                    </StackPanel>
+                                                </TabItem>
+                                            </TabControl>
+                                        </StackPanel>
+                                    </GroupBox>
+                                </Grid>
                             </TabItem>
                         </TabControl>
                     </TabItem>
@@ -136,59 +216,59 @@
                         <StackPanel Background="Black">
                             <Label Background="Black" Foreground="White" Content="Open dub.json in Visual Studio : " />
                             <Button Name="BTNShowDubFileInVS"
-                                Content="Open file" Width="100" Height="30" Background="Black" Foreground="White"
-                                    BorderBrush="White" BorderThickness="3" Margin="5" Click="BTNShowDubFileInVS_Click"
-                                    />
-                            <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap" Text="If you don't have a dub.json file, you can create a new one using the button above." />
+                                    Content="Open file" Width="100" Height="30" Background="Black" Foreground="White"
+                                    BorderBrush="White" BorderThickness="3" Margin="5" Click="BTNShowDubFileInVS_Click" />
+                            <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap"
+                                       Text="If you don't have a dub.json file, you can create a new one using the button above." />
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Build with Dub">
                         <StackPanel Background="Black">
                             <TextBox Background="Black" Foreground="White"
-                                   Text="Build with Debug(dub build --build=debug)(use of Custom Configurations :" 
-                                   TextWrapping="Wrap"
-
-                                   />
+                                     Text="Build with Debug(dub build --build=debug)(use of Custom Configurations :"
+                                     TextWrapping="Wrap" />
                             <Button Name="BtnBuildDebugDub"
-                                Content="Build Debug" Width="100" Height="30" Background="Black" Foreground="White"
-                                        BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDebugDub_Click"
-                                />
+                                    Content="Build Debug" Width="100" Height="30" Background="Black" Foreground="White"
+                                    BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDebugDub_Click" />
                             <TextBox Background="Black" Foreground="White"
-                                   Text="Build with Release(dub build --build=release)(use of Custom Configurations) : "
-                                   TextWrapping="Wrap"
-                                   />
+                                     Text="Build with Release(dub build --build=release)(use of Custom Configurations) : "
+                                     TextWrapping="Wrap" />
 
-                            <Button  Name="BtnBuildReleaseDub"
-                                Content="Build Release" Width="100" Height="30" Background="Black" Foreground="White"
-                                        BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildReleaseDub_OnClick"
-                                />
+                            <Button Name="BtnBuildReleaseDub"
+                                    Content="Build Release" Width="100" Height="30" Background="Black"
+                                    Foreground="White"
+                                    BorderBrush="White" BorderThickness="3" Margin="5"
+                                    Click="BtnBuildReleaseDub_OnClick" />
 
-                            <Label Background="Black" Foreground="White" 
+                            <Label Background="Black" Foreground="White"
                                    Content="Build with Default(dub build) : " />
-                            <Button  Name="BtnBuildDefaultDub"
-                                     Content="Build Default" Width="100" Height="30" Background="Black" Foreground="White"
-                                     BorderBrush="White" BorderThickness="3" Margin="5" 
-                                     Click="BtnBuildDefaultDub_OnClick"
-                            />
+                            <Button Name="BtnBuildDefaultDub"
+                                    Content="Build Default" Width="100" Height="30" Background="Black"
+                                    Foreground="White"
+                                    BorderBrush="White" BorderThickness="3" Margin="5"
+                                    Click="BtnBuildDefaultDub_OnClick" />
 
-                            <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap" Text="If you don't have a dub.json file, you can create a new one using the button above." />
+                            <TextBlock Background="Black" Margin="5" Foreground="White" TextWrapping="Wrap"
+                                       Text="If you don't have a dub.json file, you can create a new one using the button above." />
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="about me">
                         <StackPanel Background="Black" Margin="10">
-                            <TextBlock Text="Hello, I am Khashayar Mobasheri (Abolfazl), founder of Aripa Pars Studio." 
+                            <TextBlock Text="Hello, I am Khashayar Mobasheri (Abolfazl), founder of Aripa Pars Studio."
                                        FontSize="14" FontWeight="Bold" Margin="0,0,0,10"
                                        TextWrapping="Wrap"
-                                       Foreground="White" HorizontalAlignment="Center"/>
-                            <TextBlock Text="This extension is designed to improve the workflow for Dub and D language developers. It's a simple, yet powerful and useful extension. If you like it, I'd appreciate a star! ❤" 
-                                       TextWrapping="Wrap" Margin="0,0,0,20"
-                                       Foreground="White" HorizontalAlignment="Center"/>
+                                       Foreground="White" HorizontalAlignment="Center" />
+                            <TextBlock
+                                Text="This extension is designed to improve the workflow for Dub and D language developers. It's a simple, yet powerful and useful extension. If you like it, I'd appreciate a star! ❤"
+                                TextWrapping="Wrap" Margin="0,0,0,20"
+                                Foreground="White" HorizontalAlignment="Center" />
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Name="Btn_Telegram" Content="Telegram" Margin="5" Click="Btn_Telegram_Click"/>
-                                <Button Name="Btn_Website" Content="Website" Margin="5" Click="Btn_Website_Click"/>
-                                <Button Name="Btn_Github" Content="GitHub" Margin="5" Click="Btn_Github_Click"/>
-                                <Button Name="Btn_DockDAPrepository" Content="Extension Repository" Margin="5" Click="Btn_DockDAPrepository_Click"/>
+                                <Button Name="Btn_Telegram" Content="Telegram" Margin="5" Click="Btn_Telegram_Click" />
+                                <Button Name="Btn_Website" Content="Website" Margin="5" Click="Btn_Website_Click" />
+                                <Button Name="Btn_Github" Content="GitHub" Margin="5" Click="Btn_Github_Click" />
+                                <Button Name="Btn_DockDAPrepository" Content="Extension Repository" Margin="5"
+                                        Click="Btn_DockDAPrepository_Click" />
                             </StackPanel>
                         </StackPanel>
 
@@ -196,8 +276,8 @@
                 </TabControl>
                 <Button Name="BtnSaveDubFile" Margin="20" Background="Black" Content="Save File"
                         Foreground="White" Click="BtnSaveDubFile_OnClick"
-                        BorderThickness="3" BorderBrush="White"
-                        ></Button>
+                        BorderThickness="3" BorderBrush="White">
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>

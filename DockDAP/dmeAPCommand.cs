@@ -48,21 +48,14 @@ namespace DockDAP
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static dmeAPCommand Instance
-        {
-            get;
-            private set;
-        }
+        public static dmeAPCommand Instance { get; private set; }
 
         /// <summary>
         /// Gets the service provider from the owner package.
         /// </summary>
         private Microsoft.VisualStudio.Shell.IAsyncServiceProvider ServiceProvider
         {
-            get
-            {
-                return this.package;
-            }
+            get { return this.package; }
         }
 
         /// <summary>
@@ -75,7 +68,8 @@ namespace DockDAP
             // the UI thread.
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
-            OleMenuCommandService commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as OleMenuCommandService;
+            OleMenuCommandService commandService =
+                await package.GetServiceAsync((typeof(IMenuCommandService))) as OleMenuCommandService;
             Instance = new dmeAPCommand(package, commandService);
         }
 
@@ -88,7 +82,8 @@ namespace DockDAP
         {
             this.package.JoinableTaskFactory.RunAsync(async delegate
             {
-                ToolWindowPane window = await this.package.ShowToolWindowAsync(typeof(dmeAP), 0, true, this.package.DisposalToken);
+                ToolWindowPane window =
+                    await this.package.ShowToolWindowAsync(typeof(dmeAP), 0, true, this.package.DisposalToken);
                 if ((null == window) || (null == window.Frame))
                 {
                     throw new NotSupportedException("Cannot create tool window");

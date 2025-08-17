@@ -12,51 +12,41 @@ namespace DockDAP.Ruls
 {
     public class DubConfigAP
     {
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        [JsonProperty("name")] public string Name { get; set; }
 
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("description")] public string Description { get; set; }
 
-        [JsonProperty("authors")]
-        public List<string> Authors { get; set; } = new List<string>();
+        [JsonProperty("authors")] public List<string> Authors { get; set; } = new List<string>();
 
-        [JsonProperty("license")]
-        public string License { get; set; }
+        [JsonProperty("license")] public string License { get; set; }
 
-        [JsonProperty("targetName")]
-        public string TargetName { get; set; }
+        [JsonProperty("targetName")] public string TargetName { get; set; }
 
-        [JsonProperty("targetType")]
-        public string TargetType { get; set; }
+        [JsonProperty("targetType")] public string TargetType { get; set; }
 
-        [JsonProperty("sourceFiles")]
-        public List<string> SourceFiles { get; set; } = new List<string>();
+        [JsonProperty("sourceFiles")] public List<string> SourceFiles { get; set; } = new List<string>();
 
         [JsonProperty("dependencies")]
         public Dictionary<string, string> Dependencies { get; set; } = new Dictionary<string, string>();
 
-        [JsonProperty("buildConfigurations")] 
-        public Dictionary<string, BuildConfiguration> BuildConfigurations { get; set; } = new Dictionary<string, BuildConfiguration>();
+        [JsonProperty("buildConfigurations")]
+        public Dictionary<string, BuildConfiguration> BuildConfigurations { get; set; } =
+            new Dictionary<string, BuildConfiguration>();
 
         [JsonExtensionData]
         public Dictionary<string, object> OtherData { get; set; } = new Dictionary<string, object>();
-
     }
 
     public class BuildConfiguration
     {
-        [JsonProperty("dflags")]
-        public List<string> DFlags { get; set; } = new List<string>();
+        [JsonProperty("dflags")] public List<string> DFlags { get; set; } = new List<string>();
 
-        [JsonProperty("lflags")]
-        public List<string> LFlags { get; set; } = new List<string>();
+        [JsonProperty("lflags")] public List<string> LFlags { get; set; } = new List<string>();
     }
 
 
     public static class DubManagerAP
     {
-
         public static DTE2 FindMainPathDte2AP()
         {
             return ServiceProvider.GlobalProvider.GetService(typeof(DTE)) as DTE2;
@@ -84,17 +74,18 @@ namespace DockDAP.Ruls
             }
 
             return null;
-
         }
 
         public static DubConfigAP ReadDubFileAP(string path)
         {
-            if (string.IsNullOrEmpty(path) || !File.Exists(path)) { return null; }
+            if (string.IsNullOrEmpty(path) || !File.Exists(path))
+            {
+                return null;
+            }
 
             string jsonString = File.ReadAllText(path);
 
             return JsonConvert.DeserializeObject<DubConfigAP>(jsonString);
-
         }
 
         public static DubConfigAP CreateDubFileWithDefaultsAP(string path)
@@ -108,15 +99,15 @@ namespace DockDAP.Ruls
             {
                 Name = "initial-DubFile-DockAP",
                 Description = "A new Dub.json file by DockDAP , AripaParsStudio",
-                Authors = new List<string>(){ "DockAPUser" },
+                Authors = new List<string>() { "DockAPUser" },
             };
             string jsonString = JsonConvert.SerializeObject(config, Formatting.Indented);
             File.WriteAllText(path, jsonString);
 
             return config;
-
         }
-        public static bool SaveFileDubAP(string path , DubConfigAP inputConfigAp)
+
+        public static bool SaveFileDubAP(string path, DubConfigAP inputConfigAp)
         {
             if (string.IsNullOrEmpty(path))
             {
@@ -127,19 +118,20 @@ namespace DockDAP.Ruls
             {
                 return false;
             }
+
             try
             {
                 var jsonString = JsonConvert.SerializeObject(inputConfigAp, Formatting.Indented);
-                 System.IO.File.WriteAllText(path, jsonString);
+                System.IO.File.WriteAllText(path, jsonString);
                 return true;
             }
             catch (Exception e)
             {
                 return false;
             }
+
             return false;
         }
-
     }
 
     public static class DubCommandAP
@@ -171,7 +163,7 @@ namespace DockDAP.Ruls
 
             try
             {
-                using (System.Diagnostics.Process process =  System.Diagnostics.Process.Start(processStartInfo))
+                using (System.Diagnostics.Process process = System.Diagnostics.Process.Start(processStartInfo))
                 {
                     process.OutputDataReceived += ProcessOnOutputDataReceived;
                     process.ErrorDataReceived += ProcessOnErrorDataReceived;
@@ -214,6 +206,7 @@ namespace DockDAP.Ruls
             dte.ItemOperations.OpenFile(path);
         }
     }
+
     public static class APIdockAP
     {
         public static DubConfigAP CreateOrLoadDubFileAP()
@@ -235,8 +228,8 @@ namespace DockDAP.Ruls
                 string newFilePath = System.IO.Path.Combine(projectDirectory, "dub.json");
                 return DubManagerAP.CreateDubFileWithDefaultsAP(newFilePath);
             }
-
         }
+
         public static void BuildDubAP()
         {
             var PathFile = DubManagerAP.FindMainPathDte2AP();
@@ -255,7 +248,6 @@ namespace DockDAP.Ruls
             string ProjectPath = System.IO.Path.GetDirectoryName(FindDubFilePath);
 
             DubCommandAP.BuildDubCommandAP(ProjectPath, "build");
-
         }
 
         public static void BuildDebugDubAP()
@@ -276,8 +268,8 @@ namespace DockDAP.Ruls
             string ProjectPath = System.IO.Path.GetDirectoryName(FindDubFilePath);
 
             DubCommandAP.BuildDubCommandAP(ProjectPath, " build  --build=debug");
-
         }
+
         public static void BuildReleaseDubAP()
         {
             var PathFile = DubManagerAP.FindMainPathDte2AP();
@@ -296,8 +288,8 @@ namespace DockDAP.Ruls
             string ProjectPath = System.IO.Path.GetDirectoryName(FindDubFilePath);
 
             DubCommandAP.BuildDubCommandAP(ProjectPath, "build  --build=release");
-
         }
+
         public static void OpenDubFileAP()
         {
             var PathFile = DubManagerAP.FindMainPathDte2AP();
@@ -335,7 +327,8 @@ namespace DockDAP.Ruls
         }
 
         public static DubConfigAP AddToConfigAp(string name, string description, List<string> authors, string license,
-            string targetName, string TargetType, List<string> sourceFiles, Dictionary<string, string> dependencies, Dictionary<string, BuildConfiguration> buildConfigurations
+            string targetName, string TargetType, List<string> sourceFiles, Dictionary<string, string> dependencies,
+            Dictionary<string, BuildConfiguration> buildConfigurations
             , Dictionary<string, object> otherData)
         {
             DubConfigAP configOutput;
