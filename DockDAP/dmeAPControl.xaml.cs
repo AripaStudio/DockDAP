@@ -29,6 +29,7 @@ namespace DockDAP
         private Dictionary<string, BuildConfiguration> DictionaryBuildConfigurations =
             new Dictionary<string, BuildConfiguration>();
 
+
         private Dictionary<string, object> DictionaryOtherData = new Dictionary<string, object>();
 
 
@@ -39,6 +40,9 @@ namespace DockDAP
             ListBoxAuthors.ItemsSource = ListAuthors;
             ListBoxSourceFile.ItemsSource = ListSourceFile;
             ListBoxDependency.ItemsSource = DictionaryDependencies;
+            ListBoxLflagsDubFile.ItemsSource = DictionaryBuildConfigurations;
+            ListboxDflagsDubFile.ItemsSource = DictionaryBuildConfigurations;
+            ListBoxConfigurationsDubFile.ItemsSource = DictionaryBuildConfigurations;
 
 
             DataContext = this;
@@ -168,6 +172,11 @@ namespace DockDAP
             AnimationHover(TXTlflagsDubFile);
         }
 
+        private void TXTConfigurationsAddDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTConfigurationsAddDubFile);
+        }
+
         private void Btn_AddAuthors_OnClick(object sender, RoutedEventArgs e)
         {
             var authors = TXTauthorsDubFile.Text;
@@ -234,18 +243,45 @@ namespace DockDAP
             }
         }
 
-
         private void BtndflagsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
         {
+            var dflags = TXTdflagsDubFile.Text;
+            if (string.IsNullOrEmpty(dflags))
+            {
+                MessageBox.Show("dflags TextBox is Empty or is Null , Please Enter a Text in TextBox");
+            }
+
+            //کامل کردن این بخش 
+            // قبل از اینها یک بخش ساخت یک 
+            // Configurations 
+            // را درست کنم که به مشکل نخوریم هورا 
+
+
         }
 
         private void BtndflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
+            
         }
 
-        private void TXTConfigurationsAdd_OnMouseEnter(object sender, MouseEventArgs e)
+        private void BtnlflagsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
         {
-            AnimationHover(TXTConfigurationsAddDubFile);
+            
+        }
+
+        private void BtnlflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void BtnConfigurationsAddDubFile_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void BtnConfigurationsRemoveDubFile_OnClick(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

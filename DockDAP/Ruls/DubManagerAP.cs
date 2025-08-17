@@ -42,6 +42,11 @@ namespace DockDAP.Ruls
         [JsonProperty("dflags")] public List<string> DFlags { get; set; } = new List<string>();
 
         [JsonProperty("lflags")] public List<string> LFlags { get; set; } = new List<string>();
+
+        [JsonProperty("versions")] public List<string> Versions { get; set; } = new List<string>();
+
+        [JsonProperty("buildOptions")] public List<string> BuildOptions { get; set; } = new List<string>();
+
     }
 
 

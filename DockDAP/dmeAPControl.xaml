@@ -123,13 +123,17 @@
                                                                  Foreground="#F1F1F1"
                                                                  CaretBrush="#F1F1F1"
                                                                  BorderBrush="#555555"
-                                                                 Padding="5" />
+                                                                 Padding="5" 
+                                                                 MouseEnter="TXTdflagsDubFile_OnMouseEnter"
+                                                                 />
                                                         <Button Name="BtndflagsDubFileAdd"
                                                                 Content="Add D Flag"
                                                                 Margin="0,0,0,5"
                                                                 Background="#007ACC"
                                                                 Foreground="White"
-                                                                FontWeight="Bold" />
+                                                                FontWeight="Bold" 
+                                                                Click="BtndflagsDubFileAdd_OnClick"
+                                                                />
                                                         <ListBox Name="ListboxDflagsDubFile"
                                                                  Height="100"
                                                                  Background="#2D2D30"
@@ -140,7 +144,9 @@
                                                                 Content="Remove D Flag"
                                                                 Background="#CC4B4B"
                                                                 Foreground="White"
-                                                                FontWeight="Bold" />
+                                                                FontWeight="Bold"
+                                                                Click="BtndflagsDubFileRemove_OnClick"
+                                                                />
                                                     </StackPanel>
                                                 </TabItem>
 
@@ -154,24 +160,32 @@
                                                                  Foreground="#F1F1F1"
                                                                  CaretBrush="#F1F1F1"
                                                                  BorderBrush="#555555"
-                                                                 Padding="5" />
+                                                                 Padding="5" 
+                                                                 MouseEnter="TXTlflagsDubFile_OnMouseEnter"
+                                                                 />
                                                         <Button Name="BtnlflagsDubFileAdd"
                                                                 Content="Add L Flag"
                                                                 Margin="0,0,0,5"
                                                                 Background="#007ACC"
                                                                 Foreground="White"
-                                                                FontWeight="Bold" />
+                                                                FontWeight="Bold" 
+                                                                Click="BtnlflagsDubFileAdd_OnClick"
+                                                                />
                                                         <ListBox Name="ListBoxLflagsDubFile"
                                                                  Height="100"
                                                                  Background="#2D2D30"
                                                                  Foreground="#F1F1F1"
                                                                  BorderBrush="#555555"
-                                                                 Margin="0,0,0,5" />
+                                                                 Margin="0,0,0,5" 
+                                                                 
+                                                                 />
                                                         <Button Name="BtnlflagsDubFileRemove"
                                                                 Content="Remove L Flag"
                                                                 Background="#CC4B4B"
                                                                 Foreground="White"
-                                                                FontWeight="Bold" />
+                                                                FontWeight="Bold" 
+                                                                Click="BtnlflagsDubFileRemove_OnClick"
+                                                                />
                                                     </StackPanel>
                                                 </TabItem>
 
@@ -185,13 +199,17 @@
                                                                  Foreground="#F1F1F1"
                                                                  CaretBrush="#F1F1F1"
                                                                  BorderBrush="#555555"
-                                                                 Padding="5" />
+                                                                 Padding="5" 
+                                                                 MouseEnter="TXTConfigurationsAddDubFile_OnMouseEnter"
+                                                                 />
                                                         <Button Name="BtnConfigurationsAddDubFile"
                                                                 Content="Add Configuration"
                                                                 Margin="0,0,0,5"
                                                                 Background="#007ACC"
                                                                 Foreground="White"
-                                                                FontWeight="Bold" />
+                                                                FontWeight="Bold" 
+                                                                Click="BtnConfigurationsAddDubFile_OnClick"
+                                                                />
                                                         <ListBox Name="ListBoxConfigurationsDubFile"
                                                                  Height="100"
                                                                  Background="#2D2D30"
@@ -202,7 +220,9 @@
                                                                 Content="Remove Configuration"
                                                                 Background="#CC4B4B"
                                                                 Foreground="White"
-                                                                FontWeight="Bold" />
+                                                                FontWeight="Bold" 
+                                                                Click="BtnConfigurationsRemoveDubFile_OnClick"
+                                                                />
                                                     </StackPanel>
                                                 </TabItem>
                                             </TabControl>
