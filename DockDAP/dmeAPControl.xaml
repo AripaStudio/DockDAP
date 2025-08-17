@@ -145,7 +145,7 @@
                                         BorderBrush="White" BorderThickness="3" Margin="5" Click="BtnBuildDebugDub_Click"
                                 />
                             <TextBox Background="Black" Foreground="White"
-                                   Text="Build with Release(dub build --build=release)(use of Custom Configurations : "
+                                   Text="Build with Release(dub build --build=release)(use of Custom Configurations) : "
                                    TextWrapping="Wrap"
                                    />
 
