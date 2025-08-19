@@ -29,6 +29,8 @@ namespace DockDAP
         private Dictionary<string, BuildConfiguration> DictionaryBuildConfigurations =
             new Dictionary<string, BuildConfiguration>();
 
+        private BuildConfiguration CurrentBuildConfiguration = new BuildConfiguration();
+
 
         private Dictionary<string, object> DictionaryOtherData = new Dictionary<string, object>();
 
@@ -40,9 +42,12 @@ namespace DockDAP
             ListBoxAuthors.ItemsSource = ListAuthors;
             ListBoxSourceFile.ItemsSource = ListSourceFile;
             ListBoxDependency.ItemsSource = DictionaryDependencies;
-            ListBoxLflagsDubFile.ItemsSource = DictionaryBuildConfigurations;
-            ListboxDflagsDubFile.ItemsSource = DictionaryBuildConfigurations;
+            ListBoxLflagsDubFile.ItemsSource = CurrentBuildConfiguration.LFlags;
+            ListboxDflagsDubFile.ItemsSource = CurrentBuildConfiguration.DFlags;
             ListBoxConfigurationsDubFile.ItemsSource = DictionaryBuildConfigurations;
+
+
+            DictionaryBuildConfigurations.Add("configurations", CurrentBuildConfiguration);
 
 
             DataContext = this;
@@ -100,6 +105,11 @@ namespace DockDAP
             APIdockAP.BuildDubAP();
         }
 
+        private void SaveDictionaryBuildConfigurations()
+        {
+            DictionaryBuildConfigurations["configurations"] = CurrentBuildConfiguration;
+        }
+
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
             var Name = TXTnameDubFile.Text;
@@ -107,6 +117,7 @@ namespace DockDAP
             var license = TXTlicenseDubFile.Text;
             var targetName = TXTtargetNameDubFile.Text;
             var targetType = TXTtargetTypeDubFile.Text;
+            SaveDictionaryBuildConfigurations();
 
             var DubConfig = APIdockAP.AddToConfigAp(Name, Description, ListAuthors.ToList(), license, targetName,
                 targetType, ListSourceFile.ToList(), DictionaryDependencies, DictionaryBuildConfigurations,
@@ -184,6 +195,7 @@ namespace DockDAP
             {
                 System.Windows.Forms.MessageBox.Show(
                     "Authors TextBox is Empty or is Null , Please Enter a Text in TextBox");
+                return;
             }
 
             ListAuthors.Add(authors);
@@ -205,6 +217,7 @@ namespace DockDAP
             if (string.IsNullOrEmpty(sourceFile))
             {
                 MessageBox.Show("sourceFile TextBox is Empty or is Null , Please Enter a Text in TextBox");
+                return;
             }
 
             ListSourceFile.Add(sourceFile);
@@ -227,6 +240,7 @@ namespace DockDAP
             if (string.IsNullOrEmpty(DependencyKey) || string.IsNullOrEmpty(DependencyValue))
             {
                 MessageBox.Show("Dependency TextBox Key/Value is Empty or is Null , Please Enter a Text in TextBox");
+                return;
             }
 
             DictionaryDependencies.Add(DependencyKey, DependencyValue);
@@ -243,45 +257,73 @@ namespace DockDAP
             }
         }
 
+
         private void BtndflagsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
         {
             var dflags = TXTdflagsDubFile.Text;
             if (string.IsNullOrEmpty(dflags))
             {
                 MessageBox.Show("dflags TextBox is Empty or is Null , Please Enter a Text in TextBox");
+                return;
             }
+            
 
-            //کامل کردن این بخش 
-            // قبل از اینها یک بخش ساخت یک 
-            // Configurations 
-            // را درست کنم که به مشکل نخوریم هورا 
+            CurrentBuildConfiguration.DFlags.Add(dflags);
+
+
+            SaveDictionaryBuildConfigurations();
 
 
         }
 
         private void BtndflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            var selectedItem = ListboxDflagsDubFile.SelectedItem;
+            if (selectedItem != null)
+            {
+                DictionaryBuildConfigurations["configurations"].DFlags.Remove(selectedItem as string);
+            }
         }
 
         private void BtnlflagsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            var lflags = TXTlflagsDubFile.Text;
+            if (string.IsNullOrEmpty(lflags))
+            {
+                MessageBox.Show("lflags TextBox is Empty or is Null , Please Enter a Text in TextBox");
+                return;
+
+            }
+
+            CurrentBuildConfiguration.LFlags.Add(lflags);
+            SaveDictionaryBuildConfigurations();
         }
 
         private void BtnlflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            var selectedItem = ListBoxLflagsDubFile.SelectedItem;
+            if (selectedItem != null)
+            {
+                DictionaryBuildConfigurations["configurations"].LFlags.Remove(selectedItem as string);
+            }
         }
 
         private void BtnConfigurationsAddDubFile_OnClick(object sender, RoutedEventArgs e)
         {
+            var addOtherConfigurations = TXTConfigurationsAddDubFile.Text;
+            if (string.IsNullOrEmpty(addOtherConfigurations))
+            {
+                MessageBox.Show("Build Configurations TextBox is Empty or is Null , Please Enter a Text in TextBox");
+                return;
+
+            }
+
             
         }
 
         private void BtnConfigurationsRemoveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
-            
+
         }
     }
 }

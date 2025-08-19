@@ -189,7 +189,7 @@
                                                     </StackPanel>
                                                 </TabItem>
 
-                                                <TabItem Header="Add/Remove Configs">
+                                                <TabItem Header="Other Configurations">
                                                     <StackPanel Margin="10">
                                                         <Label Content="Configuration Name"
                                                                Foreground="#CCCCCC" />
