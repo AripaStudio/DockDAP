@@ -266,14 +266,12 @@ namespace DockDAP
                 MessageBox.Show("dflags TextBox is Empty or is Null , Please Enter a Text in TextBox");
                 return;
             }
-            
+
 
             CurrentBuildConfiguration.DFlags.Add(dflags);
 
 
             SaveDictionaryBuildConfigurations();
-
-
         }
 
         private void BtndflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
@@ -292,7 +290,6 @@ namespace DockDAP
             {
                 MessageBox.Show("lflags TextBox is Empty or is Null , Please Enter a Text in TextBox");
                 return;
-
             }
 
             CurrentBuildConfiguration.LFlags.Add(lflags);
@@ -315,15 +312,11 @@ namespace DockDAP
             {
                 MessageBox.Show("Build Configurations TextBox is Empty or is Null , Please Enter a Text in TextBox");
                 return;
-
             }
-
-            
         }
 
         private void BtnConfigurationsRemoveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }
