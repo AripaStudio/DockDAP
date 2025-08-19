@@ -307,16 +307,23 @@ namespace DockDAP
 
         private void BtnConfigurationsAddDubFile_OnClick(object sender, RoutedEventArgs e)
         {
-            var addOtherConfigurations = TXTConfigurationsAddDubFile.Text;
-            if (string.IsNullOrEmpty(addOtherConfigurations))
+            var addOtherConfigurationsKey = TXTConfigurationsAddKeyDubFile.Text;
+            var addOtherConfigurationsValue = TXTConfigurationsAddValueDubFile.Text;
+            if (string.IsNullOrEmpty(addOtherConfigurationsKey) || string.IsNullOrEmpty(addOtherConfigurationsValue))
             {
                 MessageBox.Show("Build Configurations TextBox is Empty or is Null , Please Enter a Text in TextBox");
                 return;
             }
+
+            /*
+             کامل کردن این بخش 
+             و ماژولار کردن اسم اون که اگر کاربر اسم این کانفیگوریشن رو بخواد عوض کنه به مشکل نخوره 
+             */
         }
 
         private void BtnConfigurationsRemoveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
+
         }
     }
 }

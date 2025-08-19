@@ -28,56 +28,56 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Label Content="Project"
-                           Foreground="#F1F1F1"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           Margin="0,0,0,10" />
+                                           Foreground="#F1F1F1"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Margin="0,0,0,10" />
                                     <GroupBox Header="Properties"
-                              Grid.Row="1"
-                              BorderBrush="#3F3F46"
-                              BorderThickness="1"
-                              Foreground="#F1F1F1">
+                                              Grid.Row="1"
+                                              BorderBrush="#3F3F46"
+                                              BorderThickness="1"
+                                              Foreground="#F1F1F1">
                                         <StackPanel Margin="10">
                                             <Label Content="Name" Foreground="#CCCCCC" />
                                             <TextBox Name="TXTnameDubFile"
-                                     Background="#3F3F46"
-                                     Foreground="#F1F1F1"
-                                     CaretBrush="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Padding="5"
-                                     MouseEnter="TXTnameDubFile_OnMouseEnter" />
+                                                     Background="#3F3F46"
+                                                     Foreground="#F1F1F1"
+                                                     CaretBrush="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Padding="5"
+                                                     MouseEnter="TXTnameDubFile_OnMouseEnter" />
                                             <Label Content="Description" Foreground="#CCCCCC" />
                                             <TextBox Name="TXTdescriptionDubFile"
-                                     Background="#3F3F46"
-                                     Foreground="#F1F1F1"
-                                     CaretBrush="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Padding="5"
-                                     MouseEnter="TXTdescriptionDubFile_OnMouseEnter" />
+                                                     Background="#3F3F46"
+                                                     Foreground="#F1F1F1"
+                                                     CaretBrush="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Padding="5"
+                                                     MouseEnter="TXTdescriptionDubFile_OnMouseEnter" />
                                             <Label Content="License" Foreground="#CCCCCC" />
                                             <TextBox Name="TXTlicenseDubFile"
-                                     Background="#3F3F46"
-                                     Foreground="#F1F1F1"
-                                     CaretBrush="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Padding="5"
-                                     MouseEnter="TXTlicenseDubFile_OnMouseEnter" />
+                                                     Background="#3F3F46"
+                                                     Foreground="#F1F1F1"
+                                                     CaretBrush="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Padding="5"
+                                                     MouseEnter="TXTlicenseDubFile_OnMouseEnter" />
                                             <Label Content="Target Name" Foreground="#CCCCCC" />
                                             <TextBox Name="TXTtargetNameDubFile"
-                                     Background="#3F3F46"
-                                     Foreground="#F1F1F1"
-                                     CaretBrush="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Padding="5"
-                                     MouseEnter="TXTtargetNameDubFile_OnMouseEnter" />
+                                                     Background="#3F3F46"
+                                                     Foreground="#F1F1F1"
+                                                     CaretBrush="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Padding="5"
+                                                     MouseEnter="TXTtargetNameDubFile_OnMouseEnter" />
                                             <Label Content="Target Type" Foreground="#CCCCCC" />
                                             <TextBox Name="TXTtargetTypeDubFile"
-                                     Background="#3F3F46"
-                                     Foreground="#F1F1F1"
-                                     CaretBrush="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Padding="5"
-                                     MouseEnter="TXTtargetTypeDubFile_OnMouseEnter" />
+                                                     Background="#3F3F46"
+                                                     Foreground="#F1F1F1"
+                                                     CaretBrush="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Padding="5"
+                                                     MouseEnter="TXTtargetTypeDubFile_OnMouseEnter" />
                                         </StackPanel>
                                     </GroupBox>
                                 </Grid>
@@ -89,44 +89,44 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Label Content="Authors"
-                           Foreground="#F1F1F1"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           Margin="0,0,0,10" />
+                                           Foreground="#F1F1F1"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Margin="0,0,0,10" />
                                     <GroupBox Header="Manage Authors"
-                              Grid.Row="1"
-                              BorderBrush="#3F3F46"
-                              BorderThickness="1"
-                              Foreground="#F1F1F1">
+                                              Grid.Row="1"
+                                              BorderBrush="#3F3F46"
+                                              BorderThickness="1"
+                                              Foreground="#F1F1F1">
                                         <StackPanel Margin="10">
                                             <Label Content="Author Name" Foreground="#CCCCCC" />
                                             <TextBox Name="TXTauthorsDubFile"
-                                     Background="#3F3F46"
-                                     Foreground="#F1F1F1"
-                                     CaretBrush="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Padding="5"
-                                     MouseEnter="TXTauthorsDubFile_OnMouseEnter" />
+                                                     Background="#3F3F46"
+                                                     Foreground="#F1F1F1"
+                                                     CaretBrush="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Padding="5"
+                                                     MouseEnter="TXTauthorsDubFile_OnMouseEnter" />
                                             <Button Name="Btn_AddAuthors"
-                                    Content="Add Author"
-                                    Margin="0,10,0,10"
-                                    Background="#007ACC"
-                                    Foreground="White"
-                                    FontWeight="Bold"
-                                    Click="Btn_AddAuthors_OnClick" />
+                                                    Content="Add Author"
+                                                    Margin="0,10,0,10"
+                                                    Background="#007ACC"
+                                                    Foreground="White"
+                                                    FontWeight="Bold"
+                                                    Click="Btn_AddAuthors_OnClick" />
                                             <ListBox x:Name="ListBoxAuthors"
-                                     Height="150"
-                                     ItemsSource="{Binding ListAuthors}"
-                                     Background="#2D2D30"
-                                     Foreground="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Margin="0,0,0,5" />
+                                                     Height="150"
+                                                     ItemsSource="{Binding ListAuthors}"
+                                                     Background="#2D2D30"
+                                                     Foreground="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Margin="0,0,0,5" />
                                             <Button Name="Btn_DeleteAuthors"
-                                    Content="Remove Selected Author"
-                                    Background="#CC4B4B"
-                                    Foreground="White"
-                                    FontWeight="Bold"
-                                    Click="Btn_DeleteAuthors_OnClick" />
+                                                    Content="Remove Selected Author"
+                                                    Background="#CC4B4B"
+                                                    Foreground="White"
+                                                    FontWeight="Bold"
+                                                    Click="Btn_DeleteAuthors_OnClick" />
                                         </StackPanel>
                                     </GroupBox>
                                 </Grid>
@@ -138,44 +138,44 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Label Content="Source Files"
-                           Foreground="#F1F1F1"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           Margin="0,0,0,10" />
+                                           Foreground="#F1F1F1"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Margin="0,0,0,10" />
                                     <GroupBox Header="Manage Files"
-                              Grid.Row="1"
-                              BorderBrush="#3F3F46"
-                              BorderThickness="1"
-                              Foreground="#F1F1F1">
+                                              Grid.Row="1"
+                                              BorderBrush="#3F3F46"
+                                              BorderThickness="1"
+                                              Foreground="#F1F1F1">
                                         <StackPanel Margin="10">
                                             <Label Content="Source File Path" Foreground="#CCCCCC" />
                                             <TextBox Name="TXTsourceFilesDubFile"
-                                     Background="#3F3F46"
-                                     Foreground="#F1F1F1"
-                                     CaretBrush="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Padding="5"
-                                     MouseEnter="TXTsourceFilesDubFile_OnMouseEnter" />
+                                                     Background="#3F3F46"
+                                                     Foreground="#F1F1F1"
+                                                     CaretBrush="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Padding="5"
+                                                     MouseEnter="TXTsourceFilesDubFile_OnMouseEnter" />
                                             <Button Name="BtnAddSourceFile"
-                                    Content="Add Source File"
-                                    Margin="0,10,0,10"
-                                    Background="#007ACC"
-                                    Foreground="White"
-                                    FontWeight="Bold"
-                                    Click="BtnAddSourceFile_OnClick" />
+                                                    Content="Add Source File"
+                                                    Margin="0,10,0,10"
+                                                    Background="#007ACC"
+                                                    Foreground="White"
+                                                    FontWeight="Bold"
+                                                    Click="BtnAddSourceFile_OnClick" />
                                             <ListBox x:Name="ListBoxSourceFile"
-                                     Height="150"
-                                     ItemsSource="{Binding ListSourceFile}"
-                                     Background="#2D2D30"
-                                     Foreground="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Margin="0,0,0,5" />
+                                                     Height="150"
+                                                     ItemsSource="{Binding ListSourceFile}"
+                                                     Background="#2D2D30"
+                                                     Foreground="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Margin="0,0,0,5" />
                                             <Button Name="BtnDeleteSourceFile"
-                                    Content="Remove Selected Source File"
-                                    Background="#CC4B4B"
-                                    Foreground="White"
-                                    FontWeight="Bold"
-                                    Click="BtnDeleteSourceFile_OnClick" />
+                                                    Content="Remove Selected Source File"
+                                                    Background="#CC4B4B"
+                                                    Foreground="White"
+                                                    FontWeight="Bold"
+                                                    Click="BtnDeleteSourceFile_OnClick" />
                                         </StackPanel>
                                     </GroupBox>
                                 </Grid>
@@ -187,26 +187,26 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Label Content="Dependencies"
-                           Foreground="#F1F1F1"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           Margin="0,0,0,10" />
+                                           Foreground="#F1F1F1"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Margin="0,0,0,10" />
                                     <GroupBox Header="Manage Dependencies"
-                              Grid.Row="1"
-                              BorderBrush="#3F3F46"
-                              BorderThickness="1"
-                              Foreground="#F1F1F1">
+                                              Grid.Row="1"
+                                              BorderBrush="#3F3F46"
+                                              BorderThickness="1"
+                                              Foreground="#F1F1F1">
                                         <StackPanel Margin="10">
                                             <Label Content="Dependency" Foreground="#CCCCCC" />
                                             <DockPanel>
                                                 <Label Foreground="#CCCCCC" Margin="0,0,5,0">Key :</Label>
                                                 <TextBox Name="TXTdependenciesKeyDubFile"
-                                         Width="250"
-                                         BorderBrush="#555555"
-                                         BorderThickness="1"
-                                         Background="#3F3F46"
-                                         Foreground="#F1F1F1"
-                                         CaretBrush="#F1F1F1" />
+                                                         Width="250"
+                                                         BorderBrush="#555555"
+                                                         BorderThickness="1"
+                                                         Background="#3F3F46"
+                                                         Foreground="#F1F1F1"
+                                                         CaretBrush="#F1F1F1" />
                                             </DockPanel>
                                             <DockPanel>
                                                 <Label Foreground="#CCCCCC" Margin="0,5,0,0">Value :</Label>
@@ -215,23 +215,23 @@
                                                          BorderThickness="1"
                                                          Background="#3F3F46"
                                                          Foreground="#F1F1F1"
-                                                         CaretBrush="#F1F1F1" 
+                                                         CaretBrush="#F1F1F1"
                                                          Width="230"
-                                                         Margin="3"/>
+                                                         Margin="3" />
                                             </DockPanel>
                                             <Button Name="Btn_AddDependency"
-                                    Content="Add Dependency"
-                                    Margin="0,10,0,10"
-                                    Background="#007ACC"
-                                    Foreground="White"
-                                    FontWeight="Bold"
-                                    Click="Btn_AddDependency_OnClick" />
+                                                    Content="Add Dependency"
+                                                    Margin="0,10,0,10"
+                                                    Background="#007ACC"
+                                                    Foreground="White"
+                                                    FontWeight="Bold"
+                                                    Click="Btn_AddDependency_OnClick" />
                                             <ListBox Name="ListBoxDependency"
-                                     Height="150"
-                                     Background="#2D2D30"
-                                     Foreground="#F1F1F1"
-                                     BorderBrush="#555555"
-                                     Margin="0,0,0,5">
+                                                     Height="150"
+                                                     Background="#2D2D30"
+                                                     Foreground="#F1F1F1"
+                                                     BorderBrush="#555555"
+                                                     Margin="0,0,0,5">
                                                 <ListBox.ItemTemplate>
                                                     <DataTemplate>
                                                         <StackPanel HorizontalAlignment="Center">
@@ -243,11 +243,11 @@
                                                 </ListBox.ItemTemplate>
                                             </ListBox>
                                             <Button Name="Btn_DeleteDependency"
-                                    Content="Remove Selected Dependency"
-                                    Background="#CC4B4B"
-                                    Foreground="White"
-                                    FontWeight="Bold"
-                                    Click="Btn_DeleteDependency_OnClick" />
+                                                    Content="Remove Selected Dependency"
+                                                    Background="#CC4B4B"
+                                                    Foreground="White"
+                                                    FontWeight="Bold"
+                                                    Click="Btn_DeleteDependency_OnClick" />
                                         </StackPanel>
                                     </GroupBox>
                                 </Grid>
@@ -259,118 +259,130 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <Label Content="Build Configurations"
-                           Foreground="#F1F1F1"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           Margin="0,0,0,10" />
+                                           Foreground="#F1F1F1"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Margin="0,0,0,10" />
                                     <GroupBox Header="Configurations"
-                              Grid.Row="1"
-                              BorderBrush="#3F3F46"
-                              BorderThickness="1"
-                              Foreground="#F1F1F1">
+                                              Grid.Row="1"
+                                              BorderBrush="#3F3F46"
+                                              BorderThickness="1"
+                                              Foreground="#F1F1F1">
                                         <StackPanel Margin="10">
                                             <TabControl BorderBrush="#3F3F46"
-                                        BorderThickness="1"
-                                        Background="#252526"
-                                        Foreground="#F1F1F1"
-                                        Padding="5">
+                                                        BorderThickness="1"
+                                                        Background="#252526"
+                                                        Foreground="#F1F1F1"
+                                                        Padding="5">
                                                 <TabItem Header="dflags">
                                                     <StackPanel Margin="10">
                                                         <Label Content="D Flags"
-                                               Foreground="#CCCCCC" />
+                                                               Foreground="#CCCCCC" />
                                                         <TextBox Name="TXTdflagsDubFile"
-                                                 Margin="0,5,0,10"
-                                                 Background="#3F3F46"
-                                                 Foreground="#F1F1F1"
-                                                 CaretBrush="#F1F1F1"
-                                                 BorderBrush="#555555"
-                                                 Padding="5"
-                                                 MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5"
+                                                                 MouseEnter="TXTdflagsDubFile_OnMouseEnter" />
                                                         <Button Name="BtndflagsDubFileAdd"
-                                                Content="Add D Flag"
-                                                Margin="0,0,0,5"
-                                                Background="#007ACC"
-                                                Foreground="White"
-                                                FontWeight="Bold"
-                                                Click="BtndflagsDubFileAdd_OnClick" />
+                                                                Content="Add D Flag"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtndflagsDubFileAdd_OnClick" />
                                                         <ListBox Name="ListboxDflagsDubFile"
-                                                 Height="100"
-                                                 Background="#2D2D30"
-                                                 Foreground="#F1F1F1"
-                                                 BorderBrush="#555555"
-                                                 Margin="0,0,0,5" />
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
                                                         <Button Name="BtndflagsDubFileRemove"
-                                                Content="Remove D Flag"
-                                                Background="#CC4B4B"
-                                                Foreground="White"
-                                                FontWeight="Bold"
-                                                Click="BtndflagsDubFileRemove_OnClick" />
+                                                                Content="Remove D Flag"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtndflagsDubFileRemove_OnClick" />
                                                     </StackPanel>
                                                 </TabItem>
                                                 <TabItem Header="lflags">
                                                     <StackPanel Margin="10">
                                                         <Label Content="L Flags"
-                                               Foreground="#CCCCCC" />
+                                                               Foreground="#CCCCCC" />
                                                         <TextBox Name="TXTlflagsDubFile"
-                                                 Margin="0,5,0,10"
-                                                 Background="#3F3F46"
-                                                 Foreground="#F1F1F1"
-                                                 CaretBrush="#F1F1F1"
-                                                 BorderBrush="#555555"
-                                                 Padding="5"
-                                                 MouseEnter="TXTlflagsDubFile_OnMouseEnter" />
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5"
+                                                                 MouseEnter="TXTlflagsDubFile_OnMouseEnter" />
                                                         <Button Name="BtnlflagsDubFileAdd"
-                                                Content="Add L Flag"
-                                                Margin="0,0,0,5"
-                                                Background="#007ACC"
-                                                Foreground="White"
-                                                FontWeight="Bold"
-                                                Click="BtnlflagsDubFileAdd_OnClick" />
+                                                                Content="Add L Flag"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnlflagsDubFileAdd_OnClick" />
                                                         <ListBox Name="ListBoxLflagsDubFile"
-                                                 Height="100"
-                                                 Background="#2D2D30"
-                                                 Foreground="#F1F1F1"
-                                                 BorderBrush="#555555"
-                                                 Margin="0,0,0,5" />
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
                                                         <Button Name="BtnlflagsDubFileRemove"
-                                                Content="Remove L Flag"
-                                                Background="#CC4B4B"
-                                                Foreground="White"
-                                                FontWeight="Bold"
-                                                Click="BtnlflagsDubFileRemove_OnClick" />
+                                                                Content="Remove L Flag"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnlflagsDubFileRemove_OnClick" />
                                                     </StackPanel>
                                                 </TabItem>
                                                 <TabItem Header="Other Configurations">
                                                     <StackPanel Margin="10">
-                                                        <Label Content="Configuration Name"
-                                               Foreground="#CCCCCC" />
-                                                        <TextBox Name="TXTConfigurationsAddDubFile"
-                                                 Margin="0,5,0,10"
-                                                 Background="#3F3F46"
-                                                 Foreground="#F1F1F1"
-                                                 CaretBrush="#F1F1F1"
-                                                 BorderBrush="#555555"
-                                                 Padding="5"
-                                                 MouseEnter="TXTConfigurationsAddDubFile_OnMouseEnter" />
+                                                        <Label Content="Configuration Name(Key)"
+                                                               Foreground="#CCCCCC" />
+                                                        <TextBox Name="TXTConfigurationsAddKeyDubFile"
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5"
+                                                                 MouseEnter="TXTConfigurationsAddDubFile_OnMouseEnter" />
+
+                                                        <Label Content="Configuration Name(Value)"
+                                                               Foreground="#CCCCCC" />
+                                                        <TextBox Name="TXTConfigurationsAddValueDubFile"
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5" 
+                                                                 
+                                                                 />
                                                         <Button Name="BtnConfigurationsAddDubFile"
-                                                Content="Add Configuration"
-                                                Margin="0,0,0,5"
-                                                Background="#007ACC"
-                                                Foreground="White"
-                                                FontWeight="Bold"
-                                                Click="BtnConfigurationsAddDubFile_OnClick" />
+                                                                Content="Add Configuration"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnConfigurationsAddDubFile_OnClick" />
                                                         <ListBox Name="ListBoxConfigurationsDubFile"
-                                                 Height="100"
-                                                 Background="#2D2D30"
-                                                 Foreground="#F1F1F1"
-                                                 BorderBrush="#555555"
-                                                 Margin="0,0,0,5" />
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
                                                         <Button Name="BtnConfigurationsRemoveDubFile"
-                                                Content="Remove Configuration"
-                                                Background="#CC4B4B"
-                                                Foreground="White"
-                                                FontWeight="Bold"
-                                                Click="BtnConfigurationsRemoveDubFile_OnClick" />
+                                                                Content="Remove Configuration"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnConfigurationsRemoveDubFile_OnClick" />
                                                     </StackPanel>
                                                 </TabItem>
                                             </TabControl>
@@ -387,34 +399,34 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Content="Show dub.json"
-                   Foreground="#F1F1F1"
-                   FontSize="16"
-                   FontWeight="Bold"
-                   Margin="0,0,0,10" />
+                                   Foreground="#F1F1F1"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,10" />
                             <GroupBox Header="File Operations"
-                      Grid.Row="1"
-                      BorderBrush="#3F3F46"
-                      BorderThickness="1"
-                      Foreground="#F1F1F1">
+                                      Grid.Row="1"
+                                      BorderBrush="#3F3F46"
+                                      BorderThickness="1"
+                                      Foreground="#F1F1F1">
                                 <StackPanel Margin="10">
                                     <TextBlock Foreground="#F1F1F1"
-                               TextWrapping="Wrap"
-                               Text="Open dub.json in Visual Studio:"
-                               HorizontalAlignment="Center" />
+                                               TextWrapping="Wrap"
+                                               Text="Open dub.json in Visual Studio:"
+                                               HorizontalAlignment="Center" />
                                     <Button Name="BTNShowDubFileInVS"
-                            Content="Open File"
-                            Width="150"
-                            Height="30"
-                            Background="#007ACC"
-                            Foreground="White"
-                            FontWeight="Bold"
-                            Margin="5"
-                            Click="BTNShowDubFileInVS_Click" />
+                                            Content="Open File"
+                                            Width="150"
+                                            Height="30"
+                                            Background="#007ACC"
+                                            Foreground="White"
+                                            FontWeight="Bold"
+                                            Margin="5"
+                                            Click="BTNShowDubFileInVS_Click" />
                                     <TextBlock Foreground="#F1F1F1"
-                               Margin="5"
-                               TextWrapping="Wrap"
-                               Text="If you don't have a dub.json file, you can create a new one using the button above."
-                               HorizontalAlignment="Center" />
+                                               Margin="5"
+                                               TextWrapping="Wrap"
+                                               Text="If you don't have a dub.json file, you can create a new one using the button above."
+                                               HorizontalAlignment="Center" />
                                 </StackPanel>
                             </GroupBox>
                         </Grid>
@@ -426,56 +438,56 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Content="Build with Dub"
-                   Foreground="#F1F1F1"
-                   FontSize="16"
-                   FontWeight="Bold"
-                   Margin="0,0,0,10" />
+                                   Foreground="#F1F1F1"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,10" />
                             <GroupBox Header="Build Options"
-                      Grid.Row="1"
-                      BorderBrush="#3F3F46"
-                      BorderThickness="1"
-                      Foreground="#F1F1F1">
+                                      Grid.Row="1"
+                                      BorderBrush="#3F3F46"
+                                      BorderThickness="1"
+                                      Foreground="#F1F1F1">
                                 <StackPanel Margin="10">
                                     <TextBlock Foreground="#F1F1F1"
-                               Text="Build with Debug (dub build --build=debug) (use of Custom Configurations :"
-                               TextWrapping="Wrap" />
+                                               Text="Build with Debug (dub build --build=debug) (use of Custom Configurations :"
+                                               TextWrapping="Wrap" />
                                     <Button Name="BtnBuildDebugDub"
-                            Content="Build Debug"
-                            Width="150"
-                            Height="30"
-                            Background="#007ACC"
-                            Foreground="White"
-                            FontWeight="Bold"
-                            Margin="5"
-                            Click="BtnBuildDebugDub_Click" />
+                                            Content="Build Debug"
+                                            Width="150"
+                                            Height="30"
+                                            Background="#007ACC"
+                                            Foreground="White"
+                                            FontWeight="Bold"
+                                            Margin="5"
+                                            Click="BtnBuildDebugDub_Click" />
                                     <TextBlock Foreground="#F1F1F1"
-                               Text="Build with Release (dub build --build=release) (use of Custom Configurations) :"
-                               TextWrapping="Wrap" />
+                                               Text="Build with Release (dub build --build=release) (use of Custom Configurations) :"
+                                               TextWrapping="Wrap" />
                                     <Button Name="BtnBuildReleaseDub"
-                            Content="Build Release"
-                            Width="150"
-                            Height="30"
-                            Background="#007ACC"
-                            Foreground="White"
-                            FontWeight="Bold"
-                            Margin="5"
-                            Click="BtnBuildReleaseDub_OnClick" />
+                                            Content="Build Release"
+                                            Width="150"
+                                            Height="30"
+                                            Background="#007ACC"
+                                            Foreground="White"
+                                            FontWeight="Bold"
+                                            Margin="5"
+                                            Click="BtnBuildReleaseDub_OnClick" />
                                     <TextBlock Foreground="#F1F1F1"
-                               Text="Build with Default (dub build) :" />
+                                               Text="Build with Default (dub build) :" />
                                     <Button Name="BtnBuildDefaultDub"
-                            Content="Build Default"
-                            Width="150"
-                            Height="30"
-                            Background="#007ACC"
-                            Foreground="White"
-                            FontWeight="Bold"
-                            Margin="5"
-                            Click="BtnBuildDefaultDub_OnClick" />
+                                            Content="Build Default"
+                                            Width="150"
+                                            Height="30"
+                                            Background="#007ACC"
+                                            Foreground="White"
+                                            FontWeight="Bold"
+                                            Margin="5"
+                                            Click="BtnBuildDefaultDub_OnClick" />
                                     <TextBlock Foreground="#F1F1F1"
-                               Margin="5"
-                               TextWrapping="Wrap"
-                               Text="If you don't have a dub.json file, you can create a new one using the button above."
-                               HorizontalAlignment="Center" />
+                                               Margin="5"
+                                               TextWrapping="Wrap"
+                                               Text="If you don't have a dub.json file, you can create a new one using the button above."
+                                               HorizontalAlignment="Center" />
                                 </StackPanel>
                             </GroupBox>
                         </Grid>
@@ -487,52 +499,54 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Content="About Aripa Pars Studio"
-                   Foreground="#F1F1F1"
-                   FontSize="16"
-                   FontWeight="Bold"
-                   Margin="0,0,0,10" />
+                                   Foreground="#F1F1F1"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,10" />
                             <GroupBox Header="Information"
-                      Grid.Row="1"
-                      BorderBrush="#3F3F46"
-                      BorderThickness="1"
-                      Foreground="#F1F1F1">
+                                      Grid.Row="1"
+                                      BorderBrush="#3F3F46"
+                                      BorderThickness="1"
+                                      Foreground="#F1F1F1">
                                 <StackPanel Margin="10">
-                                    <TextBlock Text="Hello, I am Khashayar Mobasheri (Abolfazl), founder of Aripa Pars Studio."
-                               FontSize="14" FontWeight="Bold" Margin="0,0,0,10"
-                               TextWrapping="Wrap"
-                               Foreground="White" HorizontalAlignment="Center" />
-                                    <TextBlock Text="This extension is designed to improve the workflow for Dub and D language developers. It's a simple, yet powerful and useful extension. If you like it, I'd appreciate a star! ❤"
-                               TextWrapping="Wrap" Margin="0,0,0,20"
-                               Foreground="White" HorizontalAlignment="Center" />
+                                    <TextBlock
+                                        Text="Hello, I am Khashayar Mobasheri (Abolfazl), founder of Aripa Pars Studio."
+                                        FontSize="14" FontWeight="Bold" Margin="0,0,0,10"
+                                        TextWrapping="Wrap"
+                                        Foreground="White" HorizontalAlignment="Center" />
+                                    <TextBlock
+                                        Text="This extension is designed to improve the workflow for Dub and D language developers. It's a simple, yet powerful and useful extension. If you like it, I'd appreciate a star! ❤"
+                                        TextWrapping="Wrap" Margin="0,0,0,20"
+                                        Foreground="White" HorizontalAlignment="Center" />
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                         <Button Name="Btn_Telegram"
-                                Content="Telegram"
-                                Margin="5"
-                                Background="#007ACC"
-                                Foreground="White"
-                                FontWeight="Bold"
-                                Click="Btn_Telegram_Click" />
+                                                Content="Telegram"
+                                                Margin="5"
+                                                Background="#007ACC"
+                                                Foreground="White"
+                                                FontWeight="Bold"
+                                                Click="Btn_Telegram_Click" />
                                         <Button Name="Btn_Website"
-                                Content="Website"
-                                Margin="5"
-                                Background="#007ACC"
-                                Foreground="White"
-                                FontWeight="Bold"
-                                Click="Btn_Website_Click" />
+                                                Content="Website"
+                                                Margin="5"
+                                                Background="#007ACC"
+                                                Foreground="White"
+                                                FontWeight="Bold"
+                                                Click="Btn_Website_Click" />
                                         <Button Name="Btn_Github"
-                                Content="GitHub"
-                                Margin="5"
-                                Background="#007ACC"
-                                Foreground="White"
-                                FontWeight="Bold"
-                                Click="Btn_Github_Click" />
+                                                Content="GitHub"
+                                                Margin="5"
+                                                Background="#007ACC"
+                                                Foreground="White"
+                                                FontWeight="Bold"
+                                                Click="Btn_Github_Click" />
                                         <Button Name="Btn_DockDAPrepository"
-                                Content="Extension Repository"
-                                Margin="5"
-                                Background="#007ACC"
-                                Foreground="White"
-                                FontWeight="Bold"
-                                Click="Btn_DockDAPrepository_Click" />
+                                                Content="Extension Repository"
+                                                Margin="5"
+                                                Background="#007ACC"
+                                                Foreground="White"
+                                                FontWeight="Bold"
+                                                Click="Btn_DockDAPrepository_Click" />
                                     </StackPanel>
                                 </StackPanel>
                             </GroupBox>
