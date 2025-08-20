@@ -340,6 +340,76 @@
                                                                 Click="BtnlflagsDubFileRemove_OnClick" />
                                                     </StackPanel>
                                                 </TabItem>
+                                                <TabItem Header="BuildOptions">
+                                                    <StackPanel Margin="10">
+                                                        <Label Content="Build Options"
+                                                               Foreground="#CCCCCC" />
+                                                        <TextBox Name="TXTbuildOptionsDubFile"
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5"
+                                                                 MouseEnter="TXTbuildOptionsDubFile_OnMouseEnter"
+                                                                 />
+                                                        <Button Name="BtnBuildOptionsDubFileAdd"
+                                                                Content="Add Build Options"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnBuildOptionsDubFileAdd_OnClick"
+                                                                />
+                                                        <ListBox Name="ListBoxBuildOptionsDubFile"
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
+                                                        <Button Name="BtnBuildOptionsDubFileRemove"
+                                                                Content="Remove Build Options"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnBuildOptionsDubFileRemove_OnClick"
+                                                                />
+                                                    </StackPanel>
+                                                </TabItem>
+                                                <TabItem Header="Versions">
+                                                    <StackPanel Margin="10">
+                                                        <Label Content="Versions"
+                                                               Foreground="#CCCCCC" />
+                                                        <TextBox Name="TXTVersionsDubFile"
+                                                                 Margin="0,5,0,10"
+                                                                 Background="#3F3F46"
+                                                                 Foreground="#F1F1F1"
+                                                                 CaretBrush="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Padding="5"
+                                                                 MouseEnter="TXTVersionsDubFile_OnMouseEnter"
+                                                                 />
+                                                        <Button Name="BtnVersionsDubFileAdd"
+                                                                Content="Add Versions"
+                                                                Margin="0,0,0,5"
+                                                                Background="#007ACC"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnVersionsDubFileAdd_OnClick" />
+                                                        <ListBox Name="ListBoxVersionsDubFile"
+                                                                 Height="100"
+                                                                 Background="#2D2D30"
+                                                                 Foreground="#F1F1F1"
+                                                                 BorderBrush="#555555"
+                                                                 Margin="0,0,0,5" />
+                                                        <Button Name="BtnVersionsDubFileRemove"
+                                                                Content="Remove Versions"
+                                                                Background="#CC4B4B"
+                                                                Foreground="White"
+                                                                FontWeight="Bold"
+                                                                Click="BtnVersionsDubFileRemove_OnClick" />
+                                                    </StackPanel>
+                                                </TabItem>
                                                 <TabItem Header="Other Configurations">
                                                     <StackPanel Margin="10">
                                                         <Label Content="Configuration Name(Key)"

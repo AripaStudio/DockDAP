@@ -47,6 +47,9 @@ namespace DockDAP.Ruls
 
         [JsonProperty("buildOptions")] public List<string> BuildOptions { get; set; } = new List<string>();
 
+        [JsonExtensionData]
+        public Dictionary<string, object> OtherDataBuildConfiguration { get; set; } = new Dictionary<string, object>();
+
     }
 
 

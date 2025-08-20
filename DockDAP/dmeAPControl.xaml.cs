@@ -44,6 +44,8 @@ namespace DockDAP
             ListBoxDependency.ItemsSource = DictionaryDependencies;
             ListBoxLflagsDubFile.ItemsSource = CurrentBuildConfiguration.LFlags;
             ListboxDflagsDubFile.ItemsSource = CurrentBuildConfiguration.DFlags;
+            ListBoxVersionsDubFile.ItemsSource = CurrentBuildConfiguration.Versions;
+            ListBoxBuildOptionsDubFile.ItemsSource = CurrentBuildConfiguration.BuildOptions;
             ListBoxConfigurationsDubFile.ItemsSource = DictionaryBuildConfigurations;
 
 
@@ -193,6 +195,17 @@ namespace DockDAP
             AnimationHover(TXTConfigurationsAddValueDubFile);
         }
 
+        private void TXTbuildOptionsDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTbuildOptionsDubFile);
+        }
+
+        private void TXTVersionsDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTVersionsDubFile);
+        }
+
+
         private void Btn_AddAuthors_OnClick(object sender, RoutedEventArgs e)
         {
             var authors = TXTauthorsDubFile.Text;
@@ -284,7 +297,7 @@ namespace DockDAP
             var selectedItem = ListboxDflagsDubFile.SelectedItem;
             if (selectedItem != null)
             {
-                DictionaryBuildConfigurations["configurations"].DFlags.Remove(selectedItem as string);
+                CurrentBuildConfiguration.DFlags.Remove(selectedItem as string);
             }
         }
 
@@ -306,7 +319,7 @@ namespace DockDAP
             var selectedItem = ListBoxLflagsDubFile.SelectedItem;
             if (selectedItem != null)
             {
-                DictionaryBuildConfigurations["configurations"].LFlags.Remove(selectedItem as string);
+                CurrentBuildConfiguration.LFlags.Remove(selectedItem as string);
             }
         }
 
@@ -320,17 +333,65 @@ namespace DockDAP
                 return;
             }
 
-            /*
-             کامل کردن این بخش 
-             و ماژولار کردن اسم اون که اگر کاربر اسم این کانفیگوریشن رو بخواد عوض کنه به مشکل نخوره 
-             */
+            CurrentBuildConfiguration.OtherDataBuildConfiguration.Add(addOtherConfigurationsKey , addOtherConfigurationsValue);
         }
 
         private void BtnConfigurationsRemoveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
+            var selectedItem = ListBoxConfigurationsDubFile.SelectedItem;
+            if(selectedItem != null)
+            {
+                var GetItem = (KeyValuePair<string, object>)selectedItem;
+                var key = GetItem.Key;
+                CurrentBuildConfiguration.OtherDataBuildConfiguration.Remove(key);
+
+
+            }
 
         }
 
-        
+        private void BtnBuildOptionsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
+        {
+            var addBuildOptions = TXTbuildOptionsDubFile.Text;
+            if (string.IsNullOrEmpty(addBuildOptions))
+            {
+                MessageBox.Show("Build Options TextBox is Empty or is Null , Please Enter a Text in TextBox");
+                return;
+            }
+
+            CurrentBuildConfiguration.BuildOptions.Add(addBuildOptions);
+        }
+
+        private void BtnBuildOptionsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = ListBoxBuildOptionsDubFile.SelectedItem;
+            if (selectedItem != null)
+            {
+                CurrentBuildConfiguration.BuildOptions.Remove(selectedItem as string);
+            }
+        }
+
+       
+        private void BtnVersionsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
+        {
+            var addVersion = TXTVersionsDubFile.Text;
+            if (string.IsNullOrEmpty(addVersion))
+            {
+                MessageBox.Show("Versions TextBox is Empty or is Null , Please Enter a Text in TextBox");
+return;
+            }
+
+            CurrentBuildConfiguration.Versions.Add(addVersion);
+        }
+
+        private void BtnVersionsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = ListBoxVersionsDubFile.SelectedItem;
+            if (selectedItem != null)
+            {
+                CurrentBuildConfiguration.Versions.Remove(selectedItem as string);
+            }
+
+        }
     }
 }
