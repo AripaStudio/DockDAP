@@ -185,7 +185,12 @@ namespace DockDAP
 
         private void TXTConfigurationsAddDubFile_OnMouseEnter(object sender, MouseEventArgs e)
         {
-            AnimationHover(TXTConfigurationsAddDubFile);
+            AnimationHover(TXTConfigurationsAddKeyDubFile);
+        }
+
+        private void TXTConfigurationsAddValueDubFile_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            AnimationHover(TXTConfigurationsAddValueDubFile);
         }
 
         private void Btn_AddAuthors_OnClick(object sender, RoutedEventArgs e)
@@ -325,5 +330,7 @@ namespace DockDAP
         {
 
         }
+
+        
     }
 }

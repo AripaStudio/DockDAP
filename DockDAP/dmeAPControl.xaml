@@ -362,7 +362,7 @@
                                                                  CaretBrush="#F1F1F1"
                                                                  BorderBrush="#555555"
                                                                  Padding="5" 
-                                                                 
+                                                                 MouseEnter="TXTConfigurationsAddValueDubFile_OnMouseEnter"
                                                                  />
                                                         <Button Name="BtnConfigurationsAddDubFile"
                                                                 Content="Add Configuration"
