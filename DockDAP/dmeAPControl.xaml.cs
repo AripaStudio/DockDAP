@@ -333,21 +333,19 @@ namespace DockDAP
                 return;
             }
 
-            CurrentBuildConfiguration.OtherDataBuildConfiguration.Add(addOtherConfigurationsKey , addOtherConfigurationsValue);
+            CurrentBuildConfiguration.OtherDataBuildConfiguration.Add(addOtherConfigurationsKey,
+                addOtherConfigurationsValue);
         }
 
         private void BtnConfigurationsRemoveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = ListBoxConfigurationsDubFile.SelectedItem;
-            if(selectedItem != null)
+            if (selectedItem != null)
             {
                 var GetItem = (KeyValuePair<string, object>)selectedItem;
                 var key = GetItem.Key;
                 CurrentBuildConfiguration.OtherDataBuildConfiguration.Remove(key);
-
-
             }
-
         }
 
         private void BtnBuildOptionsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
@@ -371,14 +369,14 @@ namespace DockDAP
             }
         }
 
-       
+
         private void BtnVersionsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
         {
             var addVersion = TXTVersionsDubFile.Text;
             if (string.IsNullOrEmpty(addVersion))
             {
                 MessageBox.Show("Versions TextBox is Empty or is Null , Please Enter a Text in TextBox");
-return;
+                return;
             }
 
             CurrentBuildConfiguration.Versions.Add(addVersion);
@@ -391,7 +389,6 @@ return;
             {
                 CurrentBuildConfiguration.Versions.Remove(selectedItem as string);
             }
-
         }
     }
 }
