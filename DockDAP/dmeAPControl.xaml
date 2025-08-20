@@ -351,16 +351,14 @@
                                                                  CaretBrush="#F1F1F1"
                                                                  BorderBrush="#555555"
                                                                  Padding="5"
-                                                                 MouseEnter="TXTbuildOptionsDubFile_OnMouseEnter"
-                                                                 />
+                                                                 MouseEnter="TXTbuildOptionsDubFile_OnMouseEnter" />
                                                         <Button Name="BtnBuildOptionsDubFileAdd"
                                                                 Content="Add Build Options"
                                                                 Margin="0,0,0,5"
                                                                 Background="#007ACC"
                                                                 Foreground="White"
                                                                 FontWeight="Bold"
-                                                                Click="BtnBuildOptionsDubFileAdd_OnClick"
-                                                                />
+                                                                Click="BtnBuildOptionsDubFileAdd_OnClick" />
                                                         <ListBox Name="ListBoxBuildOptionsDubFile"
                                                                  Height="100"
                                                                  Background="#2D2D30"
@@ -372,8 +370,7 @@
                                                                 Background="#CC4B4B"
                                                                 Foreground="White"
                                                                 FontWeight="Bold"
-                                                                Click="BtnBuildOptionsDubFileRemove_OnClick"
-                                                                />
+                                                                Click="BtnBuildOptionsDubFileRemove_OnClick" />
                                                     </StackPanel>
                                                 </TabItem>
                                                 <TabItem Header="Versions">
@@ -387,8 +384,7 @@
                                                                  CaretBrush="#F1F1F1"
                                                                  BorderBrush="#555555"
                                                                  Padding="5"
-                                                                 MouseEnter="TXTVersionsDubFile_OnMouseEnter"
-                                                                 />
+                                                                 MouseEnter="TXTVersionsDubFile_OnMouseEnter" />
                                                         <Button Name="BtnVersionsDubFileAdd"
                                                                 Content="Add Versions"
                                                                 Margin="0,0,0,5"
@@ -431,9 +427,8 @@
                                                                  Foreground="#F1F1F1"
                                                                  CaretBrush="#F1F1F1"
                                                                  BorderBrush="#555555"
-                                                                 Padding="5" 
-                                                                 MouseEnter="TXTConfigurationsAddValueDubFile_OnMouseEnter"
-                                                                 />
+                                                                 Padding="5"
+                                                                 MouseEnter="TXTConfigurationsAddValueDubFile_OnMouseEnter" />
                                                         <Button Name="BtnConfigurationsAddDubFile"
                                                                 Content="Add Configuration"
                                                                 Margin="0,0,0,5"
@@ -626,8 +621,7 @@
 
                 <Button Name="BtnSaveDubFile" Margin="20" Background="Black" Content="Save File"
                         Foreground="White" Click="BtnSaveDubFile_OnClick"
-                        BorderThickness="3" BorderBrush="White">
-                </Button>
+                        BorderThickness="3" BorderBrush="White" />
             </StackPanel>
         </StackPanel>
     </Grid>

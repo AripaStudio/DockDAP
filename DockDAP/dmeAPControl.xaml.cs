@@ -13,7 +13,10 @@ using DockDAP.Ruls;
 namespace DockDAP
 {
     /// <summary>
-    ///     Interaction logic for dmeAPControl.
+    ///    کامل کردن بخش اینکه بعد از بازی کردن تمام مقادیر فعلی رو داخل 
+    ///    TextBox ها
+    ///    پر کند
+    ///     و بعدش ورژن اولیه به پایان میرسد
     /// </summary>
     public partial class dmeAPControl : UserControl
     {
