@@ -2,42 +2,38 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using DockDAP.Ruls;
-using Microsoft.VisualStudio.CommandBars;
-using Microsoft.VisualStudio.Shell.Interop;
 
 namespace DockDAP
 {
     /// <summary>
-    /// Interaction logic for dmeAPControl.
+    ///     Interaction logic for dmeAPControl.
     /// </summary>
     public partial class dmeAPControl : UserControl
     {
+        private  BuildConfiguration CurrentBuildConfiguration = new BuildConfiguration();
         public DubConfigAP CurrentDubConfigAP;
-        private ObservableCollection<string> ListAuthors = new ObservableCollection<string>();
-        private ObservableCollection<string> ListSourceFile = new ObservableCollection<string>();
-        private Dictionary<string, string> DictionaryDependencies = new Dictionary<string, string>();
 
-        private Dictionary<string, BuildConfiguration> DictionaryBuildConfigurations =
+        private  Dictionary<string, BuildConfiguration> DictionaryBuildConfigurations =
             new Dictionary<string, BuildConfiguration>();
 
-        private BuildConfiguration CurrentBuildConfiguration = new BuildConfiguration();
+        private  Dictionary<string, string> DictionaryDependencies = new Dictionary<string, string>();
 
 
-        private Dictionary<string, object> DictionaryOtherData = new Dictionary<string, object>();
+        private  Dictionary<string, object> DictionaryOtherData = new Dictionary<string, object>();
+        private  ObservableCollection<string> ListAuthors = new ObservableCollection<string>();
+        private  ObservableCollection<string> ListSourceFile = new ObservableCollection<string>();
 
 
         public dmeAPControl()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             CurrentDubConfigAP = APIdockAP.CreateOrLoadDubFileAP();
             ListBoxAuthors.ItemsSource = ListAuthors;
             ListBoxSourceFile.ItemsSource = ListSourceFile;
@@ -49,10 +45,14 @@ namespace DockDAP
             ListBoxConfigurationsDubFile.ItemsSource = DictionaryBuildConfigurations;
 
 
-            DictionaryBuildConfigurations.Add("configurations", CurrentBuildConfiguration);
-
-
             DataContext = this;
+        }
+
+        private void AddDefaultBuildConfiguration()
+        {
+            var configurationName = "default";
+            if (!DictionaryBuildConfigurations.ContainsKey(configurationName))
+                DictionaryBuildConfigurations.Add(configurationName, CurrentBuildConfiguration);
         }
 
         [SuppressMessage("Microsoft.Globalization", "CA1300:SpecifyMessageBoxOptions", Justification = "Sample code")]
@@ -80,11 +80,8 @@ namespace DockDAP
 
         private void Btn_CreateDubFile_Click(object sender, RoutedEventArgs e)
         {
-            DubConfigAP dubConfigAp = APIdockAP.CreateOrLoadDubFileAP();
-            if (dubConfigAp == null)
-            {
-                MessageBox.Show("Error in Create or Load Dub File");
-            }
+            var dubConfigAp = APIdockAP.CreateOrLoadDubFileAP();
+            if (dubConfigAp == null) MessageBox.Show("Error in Create or Load Dub File");
         }
 
         private void BTNShowDubFileInVS_Click(object sender, RoutedEventArgs e)
@@ -107,10 +104,6 @@ namespace DockDAP
             APIdockAP.BuildDubAP();
         }
 
-        private void SaveDictionaryBuildConfigurations()
-        {
-            DictionaryBuildConfigurations["configurations"] = CurrentBuildConfiguration;
-        }
 
         private void BtnSaveDubFile_OnClick(object sender, RoutedEventArgs e)
         {
@@ -119,7 +112,7 @@ namespace DockDAP
             var license = TXTlicenseDubFile.Text;
             var targetName = TXTtargetNameDubFile.Text;
             var targetType = TXTtargetTypeDubFile.Text;
-            SaveDictionaryBuildConfigurations();
+            AddDefaultBuildConfiguration();
 
             var DubConfig = APIdockAP.AddToConfigAp(Name, Description, ListAuthors.ToList(), license, targetName,
                 targetType, ListSourceFile.ToList(), DictionaryDependencies, DictionaryBuildConfigurations,
@@ -223,10 +216,7 @@ namespace DockDAP
         {
             var selectedItem = ListBoxAuthors.SelectedItem;
 
-            if (selectedItem != null)
-            {
-                ListAuthors.Remove(selectedItem as string);
-            }
+            if (selectedItem != null) ListAuthors.Remove(selectedItem as string);
         }
 
         private void BtnAddSourceFile_OnClick(object sender, RoutedEventArgs e)
@@ -245,10 +235,7 @@ namespace DockDAP
         {
             var selectedItem = ListBoxSourceFile.SelectedItem;
 
-            if (selectedItem != null)
-            {
-                ListSourceFile.Remove(selectedItem as string);
-            }
+            if (selectedItem != null) ListSourceFile.Remove(selectedItem as string);
         }
 
         private void Btn_AddDependency_OnClick(object sender, RoutedEventArgs e)
@@ -287,18 +274,12 @@ namespace DockDAP
 
 
             CurrentBuildConfiguration.DFlags.Add(dflags);
-
-
-            SaveDictionaryBuildConfigurations();
         }
 
         private void BtndflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = ListboxDflagsDubFile.SelectedItem;
-            if (selectedItem != null)
-            {
-                CurrentBuildConfiguration.DFlags.Remove(selectedItem as string);
-            }
+            if (selectedItem != null) CurrentBuildConfiguration.DFlags.Remove(selectedItem as string);
         }
 
         private void BtnlflagsDubFileAdd_OnClick(object sender, RoutedEventArgs e)
@@ -311,16 +292,12 @@ namespace DockDAP
             }
 
             CurrentBuildConfiguration.LFlags.Add(lflags);
-            SaveDictionaryBuildConfigurations();
         }
 
         private void BtnlflagsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = ListBoxLflagsDubFile.SelectedItem;
-            if (selectedItem != null)
-            {
-                CurrentBuildConfiguration.LFlags.Remove(selectedItem as string);
-            }
+            if (selectedItem != null) CurrentBuildConfiguration.LFlags.Remove(selectedItem as string);
         }
 
         private void BtnConfigurationsAddDubFile_OnClick(object sender, RoutedEventArgs e)
@@ -363,10 +340,7 @@ namespace DockDAP
         private void BtnBuildOptionsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = ListBoxBuildOptionsDubFile.SelectedItem;
-            if (selectedItem != null)
-            {
-                CurrentBuildConfiguration.BuildOptions.Remove(selectedItem as string);
-            }
+            if (selectedItem != null) CurrentBuildConfiguration.BuildOptions.Remove(selectedItem as string);
         }
 
 
@@ -385,10 +359,7 @@ namespace DockDAP
         private void BtnVersionsDubFileRemove_OnClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = ListBoxVersionsDubFile.SelectedItem;
-            if (selectedItem != null)
-            {
-                CurrentBuildConfiguration.Versions.Remove(selectedItem as string);
-            }
+            if (selectedItem != null) CurrentBuildConfiguration.Versions.Remove(selectedItem as string);
         }
     }
 }
