@@ -12,13 +12,7 @@ using DockDAP.Ruls;
 
 namespace DockDAP
 {
-    /// <summary>
-    ///    کامل کردن بخش اینکه بعد از بازی کردن تمام مقادیر فعلی رو داخل 
-    ///    TextBox ها
-    ///    پر کند
-    ///     و بعدش ورژن اولیه به پایان میرسد
-    /// </summary>
-    /// 
+   
     public partial class dmeAPControl : UserControl
     {
         private  BuildConfiguration CurrentBuildConfiguration = new BuildConfiguration();
