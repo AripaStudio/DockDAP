@@ -57,6 +57,7 @@ namespace DockDAP
                 TXTlicenseDubFile.Text = CurrentDubConfigAP.License;
                 TXTtargetNameDubFile.Text = CurrentDubConfigAP.TargetName;
                 TXTtargetTypeDubFile.Text = CurrentDubConfigAP.TargetType;
+                
             }
         }
 
