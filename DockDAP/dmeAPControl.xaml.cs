@@ -18,6 +18,7 @@ namespace DockDAP
     ///    پر کند
     ///     و بعدش ورژن اولیه به پایان میرسد
     /// </summary>
+    /// 
     public partial class dmeAPControl : UserControl
     {
         private  BuildConfiguration CurrentBuildConfiguration = new BuildConfiguration();
@@ -48,7 +49,21 @@ namespace DockDAP
             ListBoxConfigurationsDubFile.ItemsSource = DictionaryBuildConfigurations;
 
 
+
             DataContext = this;
+        }
+
+        private void FilingInputs()
+        {
+            if (CurrentDubConfigAP != null)
+            {
+
+                TXTnameDubFile.Text = CurrentDubConfigAP.Name;
+                TXTdescriptionDubFile.Text = CurrentDubConfigAP.Description;
+                TXTlicenseDubFile.Text = CurrentDubConfigAP.License;
+                TXTtargetNameDubFile.Text = CurrentDubConfigAP.TargetName;
+                TXTtargetTypeDubFile.Text = CurrentDubConfigAP.TargetType;
+            }
         }
 
         private void AddDefaultBuildConfiguration()
