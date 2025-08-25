@@ -42,7 +42,7 @@ namespace DockDAP
             ListBoxBuildOptionsDubFile.ItemsSource = CurrentBuildConfiguration.BuildOptions;
             ListBoxConfigurationsDubFile.ItemsSource = DictionaryBuildConfigurations;
 
-
+            FilingInputs();
 
             DataContext = this;
         }
