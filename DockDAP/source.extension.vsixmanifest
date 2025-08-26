@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="DockDAP.9489eeee-eb6a-48e9-84d8-88ef51960ebd" Version="1.0" Language="en-US" Publisher="AripaParsStudio" />
+        <Identity Id="DockDAP.9489eeee-eb6a-48e9-84d8-88ef51960ebd" Version="1.0.1" Language="en-US" Publisher="AripaParsStudio" />
         <DisplayName>DockDAP</DisplayName>
         <Description xml:space="preserve">a Dub Mangaer Extensions by Aripa Pars Studio (my name is "Khashayar Mobasheri(abolfazl))</Description>
+        <MoreInfo>https://github.com/AripaStudio/DockDAP</MoreInfo>
         <License>LICENSE.txt</License>
         <Icon>Resources\DockDAP_Icon.png</Icon>
+        <Tags>DubManager , AripaStudio , Dub , Dlang</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
